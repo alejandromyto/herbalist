@@ -1,0 +1,73 @@
+<o-form-layout-manager attr="StockTienda" mode="tab" title="STOCKTIENDA">
+    <div fxFill fxLayout="column" fxLayoutAlign="start">
+        <o-table 
+            attr="StockTiendaTable" 
+            service="StockTienda" 
+            entity="StockTienda" 
+            title="STOCKTIENDA"
+            keys="Referencia;idTienda"
+            columns="ID;Referencia;idTienda;Tienda;Marca;Producto;UltimaVenta;UltimaCompra;Unidades;PrecioCoste;PrecioCosteConIVA;PrecioCosteConIVA_Recargo;PCM;PCMconIVA;PCMconIVA_Recargo;PVP;PVPsinIVA;StockInicial;Entradas;Salidas;Stock;FechaInventario" 
+            header-actions="R;D"
+            visible-columns="ID;Referencia;idTienda;Tienda;Marca;Producto;UltimaVenta;UltimaCompra;Unidades;PrecioCoste;PrecioCosteConIVA;PrecioCosteConIVA_Recargo;PCM;PCMconIVA;PCMconIVA_Recargo;PVP;PVPsinIVA;StockInicial;Entradas;Salidas;Stock;FechaInventario"  
+            sort-columns="ID" 
+            query-rows="20" 
+            quick-filter="yes"
+            row-height="medium" 
+            select-all-checkbox="true" 
+            pageable="yes"  
+            auto-adjust="true" 
+            virtual-scroll="yes" 
+            edition-mode="dblclick"
+            horizontal-scroll="yes"
+            show-title="yes"
+            export-button="yes">
+            
+            <o-table-column #ID attr="ID" title=" I D*" type="integer" editable="no" required="yes" content-align="center"></o-table-column>
+            
+            <o-table-column #Referencia attr="Referencia" title="Referencia" type="integer" editable="no" required="no" content-align="center"></o-table-column>
+            
+            <o-table-column #idTienda attr="idTienda" title="idTienda" type="integer" editable="no" required="no" content-align="center"></o-table-column>
+            
+            <o-table-column #Tienda attr="Tienda" title="Tienda" editable="no" required="yes" content-align="left"></o-table-column>
+            
+            <o-table-column #Marca attr="Marca" title="Marca" editable="no" required="no" content-align="left"></o-table-column>
+            
+            <o-table-column #Producto attr="Producto" title="Producto" editable="no" required="no" content-align="left"></o-table-column>
+            
+            <o-date-input #UltimaVenta attr="UltimaVenta" type="date" label="UltimaVenta" enabled="yes" required="no" format="LL" fxFlex="20%" class="form-field"></o-date-input>
+            
+            <o-date-input #UltimaCompra attr="UltimaCompra" type="date" label="UltimaCompra" enabled="yes" required="no" format="LL" fxFlex="20%" class="form-field"></o-date-input>
+            
+            <o-table-column #Unidades attr="Unidades" title="Unidades" type="real" min-decimal-digits="2" max-decimal-digits="4" min="0" max="1000000.0000" content-align="center"></o-table-column>
+            
+            <o-table-column #PrecioCoste attr="PrecioCoste" title="PrecioCoste" type="real" min-decimal-digits="2" max-decimal-digits="4" min="0" max="1000000.0000" content-align="center"></o-table-column>
+            
+            <o-table-column #PrecioCosteConIVA attr="PrecioCosteConIVA" title="PrecioCosteConIVA" type="real" min-decimal-digits="2" max-decimal-digits="4" min="0" max="1000000.0000" content-align="center"></o-table-column>
+            
+            <o-table-column #PrecioCosteConIVA_Recargo attr="PrecioCosteConIVA_Recargo" title="PrecioCosteConIVA_Recargo" type="real" min-decimal-digits="2" max-decimal-digits="4" min="0" max="1000000.0000" content-align="center"></o-table-column>
+            
+            <o-table-column #PCM attr="PCM" title="PCM" type="real" min-decimal-digits="2" max-decimal-digits="4" min="0" max="1000000.0000" content-align="center"></o-table-column>
+            
+            <o-table-column #PCMconIVA attr="PCMconIVA" title="PCMconIVA" type="real" min-decimal-digits="2" max-decimal-digits="4" min="0" max="1000000.0000" content-align="center"></o-table-column>
+            
+            <o-table-column #PCMconIVA_Recargo attr="PCMconIVA_Recargo" title="PCMconIVA_Recargo" type="real" min-decimal-digits="2" max-decimal-digits="4" min="0" max="1000000.0000" content-align="center"></o-table-column>
+            
+            <o-table-column #PVP attr="PVP" title="PVP" type="real" min-decimal-digits="2" max-decimal-digits="4" min="0" max="1000000.0000" content-align="center"></o-table-column>
+            
+            <o-table-column #PVPsinIVA attr="PVPsinIVA" title="PVPsinIVA" type="real" min-decimal-digits="2" max-decimal-digits="4" min="0" max="1000000.0000" content-align="center"></o-table-column>
+            
+            <o-table-column #StockInicial attr="StockInicial" title="StockInicial" type="integer" editable="no" required="no" content-align="center"></o-table-column>
+            
+            <o-table-column #Entradas attr="Entradas" title="Entradas" type="integer" editable="no" required="no" content-align="center"></o-table-column>
+            
+            <o-table-column #Salidas attr="Salidas" title="Salidas" type="integer" editable="no" required="no" content-align="center"></o-table-column>
+            
+            <o-table-column #Stock attr="Stock" title="Stock" type="integer" editable="no" required="no" content-align="center"></o-table-column>
+            
+            <o-table-column #FechaInventario attr="FechaInventario" title="FechaInventario" editable="no" required="no" content-align="left"></o-table-column>
+            
+            <o-table-context-menu></o-table-context-menu>
+            <o-table-paginator page-size-options="24;48;96"></o-table-paginator>
+        </o-table>
+    </div>
+</o-form-layout-manager>

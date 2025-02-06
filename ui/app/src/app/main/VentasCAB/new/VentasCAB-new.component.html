@@ -1,0 +1,78 @@
+<o-form #VentasCABForm attr="VentasCAB_form_insert" service="VentasCAB" entity="VentasCAB" 
+keys="Numero" fxLayout="column" show-header="yes" header-actions="I"
+horizontal-scroll="yes"
+after-insert-mode="new" class="standalone-form-container" (onInsertMode)="onInsertMode()">
+
+<o-row attr="row1" layout-align="start stretch">
+  <div fxLayout="row wrap" fxLayoutAlign="start start" fxFlex fxLayoutGap="14px">
+    
+        <o-text-input #Usuario attr="Usuario" label=" Usuario*" enabled="yes" required="no" fxFlex="20%" class="form-field"></o-text-input>
+      
+        <o-text-input #Tienda attr="Tienda" label="Tienda" enabled="yes" required="no" fxFlex="20%" class="form-field"></o-text-input>
+      
+        <o-text-input #Serie attr="Serie" label="Serie" enabled="yes" required="no" fxFlex="20%" class="form-field"></o-text-input>
+      
+        <o-integer-input #Numero attr="Numero" label="Numero" type="integer" editable="no" required="no" ></o-integer-input>
+      
+        <o-text-input #VentaMostrador attr="VentaMostrador" label="VentaMostrador" enabled="yes" required="no" fxFlex="20%" class="form-field"></o-text-input>
+      
+        <o-date-input #FechaVenta attr="FechaVenta" type="timestamp" label="FechaVenta" editable="no" required="no" format="LL" fxFlex="20%" class="form-field"></o-date-input>
+      
+        <o-currency-input #ImporteTotal attr="ImporteTotal" title="ImporteTotal" type="currency" editable="no" required="no" currency-symbol="$" currency-symbol-position="left" thousand-separator="," decimal-separator="."></o-currency-input>
+      
+        <o-text-input #PrecioLinea attr="PrecioLinea" label="PrecioLinea" enabled="yes" required="no" fxFlex="20%" class="form-field"></o-text-input>
+      
+        <o-text-input #NombreOferta attr="NombreOferta" label="NombreOferta" enabled="yes" required="no" fxFlex="20%" class="form-field"></o-text-input>
+      
+        <o-text-input #tpcDtoGlobal attr="tpcDtoGlobal" label="tpcDtoGlobal" enabled="yes" required="no" fxFlex="20%" class="form-field"></o-text-input>
+      
+        <o-text-input #tpcDtoPP attr="tpcDtoPP" label="tpcDtoPP" enabled="yes" required="no" fxFlex="20%" class="form-field"></o-text-input>
+      
+        <o-text-input #ImporteBruto attr="ImporteBruto" label="ImporteBruto" enabled="yes" required="no" fxFlex="20%" class="form-field"></o-text-input>
+      
+        <o-text-input #FacturaSN attr="FacturaSN" label="FacturaSN" enabled="yes" required="no" fxFlex="20%" class="form-field"></o-text-input>
+      
+        <o-text-input #FechaFactura attr="FechaFactura" label="FechaFactura" enabled="yes" required="no" fxFlex="20%" class="form-field"></o-text-input>
+      
+        <o-text-input #NombreRazonSocialCliente attr="NombreRazonSocialCliente" label="NombreRazonSocialCliente" enabled="yes" required="no" fxFlex="20%" class="form-field"></o-text-input>
+      
+        <o-text-input #NombreComercialCliente attr="NombreComercialCliente" label="NombreComercialCliente" enabled="yes" required="no" fxFlex="20%" class="form-field"></o-text-input>
+      
+        <o-integer-input #NCuentaCliente attr="NCuentaCliente" label="NCuentaCliente" type="integer" editable="no" required="no" ></o-integer-input>
+      
+        <o-text-input #TipoCliente attr="TipoCliente" label="TipoCliente" enabled="yes" required="no" fxFlex="20%" class="form-field"></o-text-input>
+      
+        <o-text-input #NIFCliente attr="NIFCliente" label="NIFCliente" enabled="yes" required="no" fxFlex="20%" class="form-field"></o-text-input>
+      
+        <o-text-input #Telefono attr="Telefono" label="Telefono" enabled="yes" required="no" fxFlex="20%" class="form-field"></o-text-input>
+      
+        <o-text-input #ImporteIVASuperReducido attr="ImporteIVASuperReducido" label="ImporteIVASuperReducido" enabled="yes" required="no" fxFlex="20%" class="form-field"></o-text-input>
+      
+        <o-text-input #ImporteIVAReducido attr="ImporteIVAReducido" label="ImporteIVAReducido" enabled="yes" required="no" fxFlex="20%" class="form-field"></o-text-input>
+      
+        <o-text-input #ImporteIVAAceitesPastas attr="ImporteIVAAceitesPastas" label="ImporteIVAAceitesPastas" enabled="yes" required="no" fxFlex="20%" class="form-field"></o-text-input>
+      
+        <o-text-input #ImporteIVAGeneral attr="ImporteIVAGeneral" label="ImporteIVAGeneral" enabled="yes" required="no" fxFlex="20%" class="form-field"></o-text-input>
+      
+        <o-text-input #BaseIVACero attr="BaseIVACero" label="BaseIVACero" enabled="yes" required="no" fxFlex="20%" class="form-field"></o-text-input>
+      
+        <o-text-input #BaseIVASuperReducido attr="BaseIVASuperReducido" label="BaseIVASuperReducido" enabled="yes" required="no" fxFlex="20%" class="form-field"></o-text-input>
+      
+        <o-text-input #BaseIVAReducido attr="BaseIVAReducido" label="BaseIVAReducido" enabled="yes" required="no" fxFlex="20%" class="form-field"></o-text-input>
+      
+        <o-text-input #BaseIVAAceitesPastas attr="BaseIVAAceitesPastas" label="BaseIVAAceitesPastas" enabled="yes" required="no" fxFlex="20%" class="form-field"></o-text-input>
+      
+        <o-text-input #BaseIVAGeneral attr="BaseIVAGeneral" label="BaseIVAGeneral" enabled="yes" required="no" fxFlex="20%" class="form-field"></o-text-input>
+      
+        <o-integer-input #NumeroLineas attr="NumeroLineas" label="NumeroLineas" type="integer" editable="no" required="no" ></o-integer-input>
+      
+        <o-checkbox #TieneValesDto attr="TieneValesDto" label="TieneValesDto" read-only="no" enabled="yes"></o-checkbox>
+      
+        <o-integer-input #Puntos attr="Puntos" label="Puntos" type="integer" editable="no" required="no" ></o-integer-input>
+      
+</div>
+</o-row>
+
+<div layout-padding></div>
+
+</o-form>

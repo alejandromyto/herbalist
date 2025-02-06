@@ -1,0 +1,1055 @@
+about:
+  date: February 06, 2025 05:04:20
+  recent_changes: works with modified safrs-react-admin
+  version: 0.0.0
+api_root: '{http_type}://{swagger_host}:{port}/{api}'
+authentication: '{system-default}'
+entities:
+  Cliente:
+    columns:
+    - label: ' Tipo*'
+      name: Tipo
+      search: true
+      sort: true
+      template: text
+      type: TEXT
+    - name: FechaAlta
+      type: DATE
+    - name: TipoCliente
+      template: text
+      type: TEXT
+    - name: DNI_CIF
+      template: text
+      type: TEXT
+    - name: BIC
+      template: text
+      type: TEXT
+    - name: IBAN
+      template: text
+      type: TEXT
+    - name: NCuenta
+      template: integer
+      type: INTEGER
+    - name: NombreCorto
+      template: text
+      type: TEXT
+    - name: NombreCompleto
+      template: text
+      type: TEXT
+    - name: Calle
+      template: text
+      type: TEXT
+    - name: ExtCalle
+      template: text
+      type: TEXT
+    - name: Provincia
+      template: text
+      type: TEXT
+    - name: CodPostal
+      template: text
+      type: TEXT
+    - name: Tlf
+      template: text
+      type: TEXT
+    - name: Email
+      template: text
+      type: TEXT
+    - name: Web
+      template: text
+      type: TEXT
+    - name: FPago
+      template: text
+      type: TEXT
+    - name: CC
+      template: text
+      type: TEXT
+    - name: DtoGl
+      template: text
+      type: TEXT
+    - name: NCopFact
+      template: text
+      type: TEXT
+    - name: Contacto
+      template: text
+      type: TEXT
+    - name: Recomendado
+      template: text
+      type: TEXT
+    - name: Comentarios
+      template: text
+      type: TEXT
+    - name: Notific
+      template: text
+      type: TEXT
+    - name: DeBaja
+      template: text
+      type: TEXT
+    - name: FechaBaja
+      type: DATE
+    - name: CreadorPor
+      template: text
+      type: TEXT
+    - name: SumaVentas
+      template: real
+      type: DECIMAL(11, 2)
+    - name: PuntosGenerados
+      template: integer
+      type: INTEGER
+    - name: PuntosUsados
+      template: integer
+      type: INTEGER
+    - name: SaldoParaPuntos
+      template: real
+      type: DECIMAL(11, 2)
+    - name: Localidad
+      template: text
+      type: TEXT
+    detail_template: detail_template.html
+    exclude: 'false'
+    favorite: Tipo
+    hidden: {}
+    home_template: home_template.html
+    label: Cliente
+    mode: tab
+    new_template: new_template.html
+    primary_key:
+    - NCuenta
+    tab_groups:
+    - direction: tomany
+      fks:
+      - NCuentaCliente
+      name: VentasLINList
+      resource: VentasLIN
+    type: Cliente
+  ComprasCAB:
+    columns:
+    - label: ' Serie Numero*'
+      name: SerieNumero
+      search: true
+      sort: true
+      template: text
+      type: VARCHAR(11)
+    - name: NoCuentaProveedor
+      template: integer
+      type: INTEGER
+    - name: idTienda
+      template: integer
+      type: SMALLINT
+    - name: Fecha
+      type: DATETIME
+    - name: RazonSocial
+      template: text
+      type: TEXT
+    - name: BaseImponible
+      template: real
+      type: DECIMAL(11, 2)
+    - name: ImporteIVA
+      template: real
+      type: DECIMAL(11, 2)
+    - name: ImporteRecargoEq
+      template: real
+      type: DECIMAL(11, 2)
+    - name: TotalAlbCompra
+      template: real
+      type: DECIMAL(11, 2)
+    - name: idCabCompras
+      template: integer
+      type: INTEGER
+    - name: ImporteIVAReducido
+      template: real
+      type: DECIMAL(11, 2)
+    - name: ImporteIVASuperReducido
+      template: real
+      type: DECIMAL(11, 2)
+    - name: ImporteIVAAceitesPastas
+      template: real
+      type: DECIMAL(11, 2)
+    - name: BaseIVAReducido
+      template: real
+      type: DECIMAL(11, 2)
+    - name: BaseIVASuperReducido
+      template: real
+      type: DECIMAL(11, 2)
+    - name: BaseIVAAceitesPastas
+      template: real
+      type: DECIMAL(11, 2)
+    - name: BaseIVACero
+      template: real
+      type: DECIMAL(11, 2)
+    - name: ImporteIVAGeneral
+      template: real
+      type: DECIMAL(11, 2)
+    - name: BaseIVAGeneral
+      template: real
+      type: DECIMAL(11, 2)
+    - name: TotalAlbCalculado
+      template: real
+      type: DECIMAL(11, 2)
+    - name: tpcDtoProntoPago
+      template: real
+      type: DECIMAL(5, 2)
+    - name: tpcDtoGlobal
+      template: real
+      type: DECIMAL(5, 2)
+    - name: Tienda
+      template: text
+      type: TEXT
+    detail_template: detail_template.html
+    exclude: 'false'
+    favorite: SerieNumero
+    hidden: {}
+    home_template: home_template.html
+    label: ComprasCAB
+    mode: tab
+    new_template: new_template.html
+    primary_key:
+    - idCabCompras
+    tab_groups:
+    - direction: tomany
+      fks:
+      - AlbaranCompra
+      name: ComprasLINList
+      resource: ComprasLIN
+    - direction: toone
+      fks:
+      - NoCuentaProveedor
+      name: Proveedor
+      resource: Proveedor
+    - direction: toone
+      fks:
+      - idTienda
+      name: Tienda1
+      resource: Tienda
+    type: ComprasCAB
+  ComprasLIN:
+    columns:
+    - label: ' Tienda*'
+      name: Tienda
+      search: true
+      sort: true
+      template: text
+      type: TEXT
+    - name: AlbaranCompra
+      template: text
+      type: VARCHAR(11)
+    - name: NoCuentaProveedor
+      template: integer
+      type: INTEGER
+    - name: ReferenciaProducto
+      template: integer
+      type: INTEGER
+    - name: idTienda
+      template: integer
+      type: SMALLINT
+    - name: NumeroAlbaran
+      template: integer
+      type: INTEGER
+    - name: NombreProveedor
+      template: text
+      type: TEXT
+    - name: FechaAlbaran
+      type: DATETIME
+    - name: ImporteAlbaran
+      template: real
+      type: DECIMAL(11, 2)
+    - name: OLDReferenciaProducto
+      template: text
+      type: TEXT
+    - name: DescripciondelProducto
+      template: text
+      type: TEXT
+    - name: CodigodeBarras
+      template: integer
+      type: BIGINT
+    - name: PVPProducto
+      template: real
+      type: DECIMAL(11, 2)
+    - name: PrecioLinea
+      template: real
+      type: DECIMAL(11, 2)
+    - name: tpcIVA
+      template: real
+      type: DECIMAL(11, 2)
+    - name: tpcDescuento1
+      template: real
+      type: DECIMAL(5, 2)
+    - name: tpcDescuento2
+      template: real
+      type: DECIMAL(5, 2)
+    - name: tpcDescuento3
+      template: real
+      type: DECIMAL(5, 2)
+    - name: tpcDescuento4
+      template: real
+      type: DECIMAL(5, 2)
+    - name: tpcDtoGlobal
+      template: real
+      type: DECIMAL(5, 2)
+    - name: tpcDtoProntoPago
+      template: real
+      type: DECIMAL(5, 2)
+    - name: Importe
+      template: real
+      type: DECIMAL(11, 2)
+    - name: CantidadConCoste
+      template: integer
+      type: INTEGER
+    - name: CantidadGratis
+      template: integer
+      type: INTEGER
+    - name: PrecioCoste
+      template: real
+      type: DECIMAL(11, 2)
+    - name: Lote
+      template: text
+      type: VARCHAR(20)
+    - name: FechaInventario
+      type: DATETIME
+    - name: Cantidad
+      template: integer
+      type: INTEGER
+    - name: id
+      template: integer
+      type: INTEGER
+    detail_template: detail_template.html
+    exclude: 'false'
+    favorite: Tienda
+    hidden: {}
+    home_template: home_template.html
+    label: ComprasLIN
+    mode: tab
+    new_template: new_template.html
+    primary_key:
+    - id
+    tab_groups:
+    - direction: toone
+      fks:
+      - AlbaranCompra
+      name: Compras_CAB
+      resource: ComprasCAB
+    - direction: toone
+      fks:
+      - NoCuentaProveedor
+      name: Proveedor
+      resource: Proveedor
+    - direction: toone
+      fks:
+      - ReferenciaProducto
+      name: Producto
+      resource: Producto
+    - direction: toone
+      fks:
+      - idTienda
+      - ReferenciaProducto
+      name: StockTienda
+      resource: StockTienda
+    - direction: toone
+      fks:
+      - idTienda
+      name: Tienda1
+      resource: Tienda
+    type: ComprasLIN
+  Producto:
+    columns:
+    - label: ' Referencia*'
+      name: Referencia
+      search: true
+      sort: true
+      template: integer
+      type: INTEGER
+    - name: Descripcion
+      template: text
+      type: TEXT
+    - name: DescripcionBreve
+      template: text
+      type: TEXT
+    - name: CodBarras
+      template: text
+      type: TEXT
+    - name: CodGenerico
+      template: text
+      type: TEXT
+    - name: FechaCreacion
+      template: text
+      type: TEXT
+    - name: PVP
+      template: real
+      type: FLOAT
+    - name: PrecioCoste
+      template: real
+      type: FLOAT
+    - name: Familia
+      template: text
+      type: TEXT
+    - name: SubFam
+      template: text
+      type: TEXT
+    - name: Stock
+      template: real
+      type: FLOAT
+    - name: Ubicacion
+      template: text
+      type: TEXT
+    - name: IVA
+      template: text
+      type: TEXT
+    - name: Marca
+      template: text
+      type: TEXT
+    - name: Proveedor
+      template: text
+      type: TEXT
+    - name: Descatalogado
+      template: text
+      type: TEXT
+    - name: PublicarWeb
+      template: text
+      type: TEXT
+    - name: OfertaWeb
+      template: text
+      type: TEXT
+    - name: NovedadWeb
+      template: text
+      type: TEXT
+    - name: tipoIVA
+      template: integer
+      type: SMALLINT
+    - name: FechaUltPVP
+      type: DATETIME
+    detail_template: detail_template.html
+    exclude: 'false'
+    favorite: Referencia
+    hidden: {}
+    home_template: home_template.html
+    label: Producto
+    mode: tab
+    new_template: new_template.html
+    primary_key:
+    - Referencia
+    tab_groups:
+    - direction: tomany
+      fks:
+      - ReferenciaProducto
+      name: ComprasLINList
+      resource: ComprasLIN
+    - direction: tomany
+      fks:
+      - Referencia
+      name: StockTiendaList
+      resource: StockTienda
+    - direction: tomany
+      fks:
+      - Referencia
+      name: TraspasosLINList
+      resource: TraspasosLIN
+    - direction: tomany
+      fks:
+      - RefProducto
+      name: VentasLINList
+      resource: VentasLIN
+    type: Producto
+  Proveedor:
+    columns:
+    - label: ' D N I C I F*'
+      name: DNICIF
+      search: true
+      sort: true
+      template: text
+      type: TEXT
+    - name: RSocial
+      template: text
+      type: TEXT
+    - name: TipoProv
+      template: text
+      type: TEXT
+    - name: FPago
+      template: text
+      type: TEXT
+    - name: Facturacion
+      template: text
+      type: TEXT
+    - name: Provincia
+      template: text
+      type: TEXT
+    - name: NoCuenta
+      template: integer
+      type: INTEGER
+    - name: Calle
+      template: text
+      type: TEXT
+    - name: ExtCalle
+      template: text
+      type: TEXT
+    - name: CPost
+      template: integer
+      type: INTEGER
+    - name: E_mail
+      template: text
+      type: TEXT
+    - name: Web
+      template: text
+      type: TEXT
+    - name: BIC
+      template: text
+      type: TEXT
+    - name: IBAN
+      template: text
+      type: TEXT
+    - name: CC
+      template: text
+      type: TEXT
+    - name: Tlf1
+      template: text
+      type: TEXT
+    - name: Tlf2
+      template: text
+      type: TEXT
+    - name: Movil
+      template: integer
+      type: INTEGER
+    - name: Fax
+      template: text
+      type: TEXT
+    - name: Contacto
+      template: text
+      type: TEXT
+    - name: Comentarios
+      template: text
+      type: TEXT
+    - name: Notific
+      template: text
+      type: TEXT
+    - name: Debaja
+      template: text
+      type: TEXT
+    - name: Localidad
+      template: text
+      type: TEXT
+    detail_template: detail_template.html
+    exclude: 'false'
+    favorite: DNICIF
+    hidden: {}
+    home_template: home_template.html
+    label: Proveedor
+    mode: tab
+    new_template: new_template.html
+    primary_key:
+    - NoCuenta
+    tab_groups:
+    - direction: tomany
+      fks:
+      - NoCuentaProveedor
+      name: ComprasCABList
+      resource: ComprasCAB
+    - direction: tomany
+      fks:
+      - NoCuentaProveedor
+      name: ComprasLINList
+      resource: ComprasLIN
+    type: Proveedor
+  StockTienda:
+    columns:
+    - label: ' I D*'
+      name: ID
+      required: true
+      search: true
+      sort: true
+      template: integer
+      type: INTEGER
+    - name: Referencia
+      template: integer
+      type: INTEGER
+    - name: idTienda
+      template: integer
+      type: SMALLINT
+    - name: Tienda
+      required: true
+      template: text
+      type: VARCHAR(20)
+    - name: Marca
+      template: text
+      type: TEXT
+    - name: Producto
+      template: text
+      type: TEXT
+    - name: UltimaVenta
+      type: DATE
+    - name: UltimaCompra
+      type: DATE
+    - name: Unidades
+      template: real
+      type: FLOAT
+    - name: PrecioCoste
+      template: real
+      type: FLOAT
+    - name: PrecioCosteConIVA
+      template: real
+      type: FLOAT
+    - name: PrecioCosteConIVA_Recargo
+      template: real
+      type: FLOAT
+    - name: PCM
+      template: real
+      type: FLOAT
+    - name: PCMconIVA
+      template: real
+      type: FLOAT
+    - name: PCMconIVA_Recargo
+      template: real
+      type: FLOAT
+    - name: PVP
+      template: real
+      type: FLOAT
+    - name: PVPsinIVA
+      template: real
+      type: FLOAT
+    - name: StockInicial
+      template: integer
+      type: INTEGER
+    - name: Entradas
+      template: integer
+      type: INTEGER
+    - name: Salidas
+      template: integer
+      type: INTEGER
+    - name: Stock
+      template: integer
+      type: INTEGER
+    - name: FechaInventario
+      type: DATETIME
+    detail_template: detail_template.html
+    exclude: 'false'
+    favorite: ID
+    hidden: {}
+    home_template: home_template.html
+    label: StockTienda
+    mode: tab
+    new_template: new_template.html
+    primary_key:
+    - Referencia
+    - idTienda
+    tab_groups:
+    - direction: tomany
+      fks:
+      - idTienda
+      - ReferenciaProducto
+      name: ComprasLINList
+      resource: ComprasLIN
+    - direction: tomany
+      fks:
+      - Referencia
+      - idDestino
+      name: TraspasosLINList
+      resource: TraspasosLIN
+    - direction: tomany
+      fks:
+      - idOrigen
+      - Referencia
+      name: TraspasosLINList1
+      resource: TraspasosLIN
+    - direction: tomany
+      fks:
+      - idTienda
+      - RefProducto
+      name: VentasLINList
+      resource: VentasLIN
+    - direction: toone
+      fks:
+      - Referencia
+      name: Producto1
+      resource: Producto
+    - direction: toone
+      fks:
+      - idTienda
+      name: Tienda1
+      resource: Tienda
+    type: StockTienda
+  Tienda:
+    columns:
+    - label: ' id Tienda*'
+      name: idTienda
+      search: true
+      sort: true
+      template: integer
+      type: SMALLINT
+    - name: nombreTienda
+      template: text
+      type: VARCHAR(20)
+    detail_template: detail_template.html
+    exclude: 'false'
+    favorite: idTienda
+    hidden: {}
+    home_template: home_template.html
+    label: Tienda
+    mode: tab
+    new_template: new_template.html
+    primary_key:
+    - idTienda
+    tab_groups:
+    - direction: tomany
+      fks:
+      - idTienda
+      name: ComprasCABList
+      resource: ComprasCAB
+    - direction: tomany
+      fks:
+      - idTienda
+      name: ComprasLINList
+      resource: ComprasLIN
+    - direction: tomany
+      fks:
+      - idTienda
+      name: StockTiendaList
+      resource: StockTienda
+    type: Tienda
+  TraspasosLIN:
+    columns:
+    - label: ' Origen*'
+      name: Origen
+      search: true
+      sort: true
+      template: text
+      type: TEXT
+    - name: Referencia
+      template: integer
+      type: INTEGER
+    - name: idOrigen
+      template: integer
+      type: SMALLINT
+    - name: Destino
+      template: text
+      type: TEXT
+    - name: Numero
+      template: integer
+      type: INTEGER
+    - name: Producto
+      template: text
+      type: TEXT
+    - name: FechaTraspaso
+      type: DATETIME
+    - name: PedidoProveedor
+      template: text
+      type: TEXT
+    - name: idDestino
+      template: integer
+      type: SMALLINT
+    - name: Cantidad
+      template: integer
+      type: INTEGER
+    detail_template: detail_template.html
+    exclude: 'false'
+    favorite: Origen
+    hidden: {}
+    home_template: home_template.html
+    label: TraspasosLIN
+    mode: tab
+    new_template: new_template.html
+    primary_key:
+    - Numero
+    tab_groups:
+    - direction: toone
+      fks:
+      - Referencia
+      - idDestino
+      name: StockTienda
+      resource: StockTienda
+    - direction: toone
+      fks:
+      - idOrigen
+      - Referencia
+      name: StockTienda1
+      resource: StockTienda
+    - direction: toone
+      fks:
+      - Referencia
+      name: Producto1
+      resource: Producto
+    type: TraspasosLIN
+  VentasCAB:
+    columns:
+    - label: ' Usuario*'
+      name: Usuario
+      search: true
+      sort: true
+      template: text
+      type: TEXT
+    - name: Tienda
+      template: text
+      type: TEXT
+    - name: Serie
+      template: text
+      type: TEXT
+    - name: Numero
+      template: integer
+      type: INTEGER
+    - name: VentaMostrador
+      template: text
+      type: TEXT
+    - name: FechaVenta
+      type: DATETIME
+    - name: ImporteTotal
+      template: real
+      type: FLOAT
+    - name: PrecioLinea
+      template: real
+      type: FLOAT
+    - name: NombreOferta
+      template: text
+      type: TEXT
+    - name: tpcDtoGlobal
+      template: real
+      type: FLOAT
+    - name: tpcDtoPP
+      template: real
+      type: FLOAT
+    - name: ImporteBruto
+      template: real
+      type: FLOAT
+    - name: FacturaSN
+      template: text
+      type: TEXT
+    - name: FechaFactura
+      template: text
+      type: TEXT
+    - name: NombreRazonSocialCliente
+      template: text
+      type: TEXT
+    - name: NombreComercialCliente
+      template: text
+      type: TEXT
+    - name: NCuentaCliente
+      template: integer
+      type: INTEGER
+    - name: TipoCliente
+      template: text
+      type: TEXT
+    - name: NIFCliente
+      template: text
+      type: TEXT
+    - name: Telefono
+      template: text
+      type: TEXT
+    - name: ImporteIVASuperReducido
+      template: real
+      type: FLOAT
+    - name: ImporteIVAReducido
+      template: real
+      type: FLOAT
+    - name: ImporteIVAAceitesPastas
+      template: real
+      type: FLOAT
+    - name: ImporteIVAGeneral
+      template: real
+      type: FLOAT
+    - name: BaseIVACero
+      template: real
+      type: FLOAT
+    - name: BaseIVASuperReducido
+      template: real
+      type: FLOAT
+    - name: BaseIVAReducido
+      template: real
+      type: FLOAT
+    - name: BaseIVAAceitesPastas
+      template: real
+      type: FLOAT
+    - name: BaseIVAGeneral
+      template: real
+      type: FLOAT
+    - name: NumeroLineas
+      template: integer
+      type: INTEGER
+    - name: TieneValesDto
+      template: text
+      type: BIT
+    - name: Puntos
+      template: integer
+      type: INTEGER
+    detail_template: detail_template.html
+    exclude: 'false'
+    favorite: Usuario
+    hidden: {}
+    home_template: home_template.html
+    label: VentasCAB
+    mode: tab
+    new_template: new_template.html
+    primary_key:
+    - Numero
+    tab_groups:
+    - direction: tomany
+      fks:
+      - Numero
+      name: VentasLINList
+      resource: VentasLIN
+    type: VentasCAB
+  VentasLIN:
+    columns:
+    - label: ' id*'
+      name: id
+      search: true
+      sort: true
+      template: integer
+      type: INTEGER
+    - name: NCuentaCliente
+      template: integer
+      type: INTEGER
+    - name: Numero
+      template: integer
+      type: INTEGER
+    - name: idTienda
+      template: integer
+      type: SMALLINT
+    - name: RefProducto
+      template: integer
+      type: INTEGER
+    - name: Usuario
+      template: text
+      type: TEXT
+    - name: Tienda
+      template: text
+      type: TEXT
+    - name: Serie
+      template: text
+      type: TEXT
+    - name: VentaMostrador
+      template: text
+      type: TEXT
+    - name: FechaVenta
+      type: DATETIME
+    - name: Producto
+      template: text
+      type: TEXT
+    - name: CodigoBarras
+      template: text
+      type: TEXT
+    - name: OLDRefProducto
+      template: text
+      type: TEXT
+    - name: FamiliaComercial
+      template: text
+      type: TEXT
+    - name: SubFamiliaComercial
+      template: text
+      type: TEXT
+    - name: Marca
+      template: text
+      type: TEXT
+    - name: CantidadVendida
+      template: real
+      type: FLOAT
+    - name: LoteVendido
+      template: text
+      type: TEXT
+    - name: ImporteTotal
+      template: real
+      type: FLOAT
+    - name: PrecioLinea
+      template: real
+      type: FLOAT
+    - name: tpcIVA
+      template: real
+      type: FLOAT
+    - name: NombreOferta
+      template: text
+      type: TEXT
+    - name: tpcDtoLinea
+      template: real
+      type: FLOAT
+    - name: tpcDtoGlobal
+      template: real
+      type: FLOAT
+    - name: tpcDtoPP
+      template: real
+      type: FLOAT
+    - name: ImporteBruto
+      template: real
+      type: FLOAT
+    - name: FacturaSN
+      template: text
+      type: TEXT
+    - name: FechaFactura
+      template: text
+      type: TEXT
+    - name: NombreRazonSocialCliente
+      template: text
+      type: TEXT
+    - name: NombreComercialCliente
+      template: text
+      type: TEXT
+    - name: TipoCliente
+      template: text
+      type: TEXT
+    - name: NIFCliente
+      template: text
+      type: TEXT
+    - name: Telefono
+      template: text
+      type: TEXT
+    - name: StockCantidad
+      template: real
+      type: FLOAT
+    - name: FechaCaducidad
+      template: text
+      type: TEXT
+    detail_template: detail_template.html
+    exclude: 'false'
+    favorite: id
+    hidden: {}
+    home_template: home_template.html
+    label: VentasLIN
+    mode: tab
+    new_template: new_template.html
+    primary_key:
+    - id
+    tab_groups:
+    - direction: toone
+      fks:
+      - NCuentaCliente
+      name: Cliente
+      resource: Cliente
+    - direction: toone
+      fks:
+      - Numero
+      name: Ventas_CAB
+      resource: VentasCAB
+    - direction: toone
+      fks:
+      - idTienda
+      - RefProducto
+      name: StockTienda
+      resource: StockTienda
+    - direction: toone
+      fks:
+      - RefProducto
+      name: Producto1
+      resource: Producto
+    type: VentasLIN
+settings:
+  HomeJS: /admin-app/home.js
+  max_list_columns: 8
+  style_guide:
+    applicationLocales:
+    - en
+    - es
+    currency_symbol: $
+    currency_symbol_position: left
+    date_format: LL
+    decimal_max: '1000000000'
+    decimal_min: '0'
+    decimal_separator: .
+    edit_on_mode: dblclick
+    exclude_listpicker: false
+    include_translation: false
+    keycloak_client_id: alsclient
+    keycloak_realm: kcals
+    keycloak_url: http://localhost:8080
+    locale: en
+    max_decimal_digits: '4'
+    min_decimal_digits: '2'
+    mode: tab
+    pick_style: list
+    serviceType: OntimizeEE
+    startSessionPath: /auth/login
+    style: light
+    thousand_separator: ','
+    use_keycloak: false

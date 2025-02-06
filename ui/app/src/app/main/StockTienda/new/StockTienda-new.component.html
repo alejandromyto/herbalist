@@ -1,0 +1,92 @@
+<o-form #StockTiendaForm attr="StockTienda_form_insert" service="StockTienda" entity="StockTienda" 
+keys="Referencia;idTienda" fxLayout="column" show-header="yes" header-actions="I"
+horizontal-scroll="yes"
+after-insert-mode="new" class="standalone-form-container" (onInsertMode)="onInsertMode()">
+
+<o-row attr="row1" layout-align="start stretch">
+  <div fxLayout="row wrap" fxLayoutAlign="start start" fxFlex fxLayoutGap="14px">
+    
+        <o-integer-input #ID attr="ID" label=" I D*" type="integer" editable="no" required="yes" ></o-integer-input>
+      
+        <o-list-picker 
+        attr="Referencia"
+        service="Producto" 
+        entity="ProductoType"
+        fxFlex="30" 
+        query-on-init="no" 
+        query-on-bind="yes" 
+        required="no" 
+        enabled="yes" 
+        filter="yes"
+        value-column="Referencia" 
+        value-column-type="INTEGER"  
+        keys="Referencia" 
+        columns="Referencia;Referencia;Referencia" 
+        title="Referencia"
+        visible-columns="Referencia;Referencia" 
+        separator=" - " width="680px" class="form-field">
+</o-list-picker>
+      
+        <o-list-picker 
+        attr="idTienda"
+        service="Tienda" 
+        entity="TiendaType"
+        fxFlex="30" 
+        query-on-init="no" 
+        query-on-bind="yes" 
+        required="no" 
+        enabled="yes" 
+        filter="yes"
+        value-column="idTienda" 
+        value-column-type="SMALLINT"  
+        keys="idTienda" 
+        columns="idTienda;idTienda;idTienda" 
+        title="idTienda"
+        visible-columns="idTienda;idTienda" 
+        separator=" - " width="680px" class="form-field">
+</o-list-picker>
+      
+        <o-text-input #Tienda attr="Tienda" label="Tienda" enabled="yes" required="yes" fxFlex="20%" class="form-field"></o-text-input>
+      
+        <o-text-input #Marca attr="Marca" label="Marca" enabled="yes" required="no" fxFlex="20%" class="form-field"></o-text-input>
+      
+        <o-text-input #Producto attr="Producto" label="Producto" enabled="yes" required="no" fxFlex="20%" class="form-field"></o-text-input>
+      
+        <o-date-input #UltimaVenta attr="UltimaVenta" type="date" label="UltimaVenta" enabled="yes" required="no" format="LL" fxFlex="20%" class="form-field"></o-date-input>
+      
+        <o-date-input #UltimaCompra attr="UltimaCompra" type="date" label="UltimaCompra" enabled="yes" required="no" format="LL" fxFlex="20%" class="form-field"></o-date-input>
+      
+        <o-text-input #Unidades attr="Unidades" label="Unidades" enabled="yes" required="no" fxFlex="20%" class="form-field"></o-text-input>
+      
+        <o-text-input #PrecioCoste attr="PrecioCoste" label="PrecioCoste" enabled="yes" required="no" fxFlex="20%" class="form-field"></o-text-input>
+      
+        <o-text-input #PrecioCosteConIVA attr="PrecioCosteConIVA" label="PrecioCosteConIVA" enabled="yes" required="no" fxFlex="20%" class="form-field"></o-text-input>
+      
+        <o-text-input #PrecioCosteConIVA_Recargo attr="PrecioCosteConIVA_Recargo" label="PrecioCosteConIVA_Recargo" enabled="yes" required="no" fxFlex="20%" class="form-field"></o-text-input>
+      
+        <o-text-input #PCM attr="PCM" label="PCM" enabled="yes" required="no" fxFlex="20%" class="form-field"></o-text-input>
+      
+        <o-text-input #PCMconIVA attr="PCMconIVA" label="PCMconIVA" enabled="yes" required="no" fxFlex="20%" class="form-field"></o-text-input>
+      
+        <o-text-input #PCMconIVA_Recargo attr="PCMconIVA_Recargo" label="PCMconIVA_Recargo" enabled="yes" required="no" fxFlex="20%" class="form-field"></o-text-input>
+      
+        <o-text-input #PVP attr="PVP" label="PVP" enabled="yes" required="no" fxFlex="20%" class="form-field"></o-text-input>
+      
+        <o-text-input #PVPsinIVA attr="PVPsinIVA" label="PVPsinIVA" enabled="yes" required="no" fxFlex="20%" class="form-field"></o-text-input>
+      
+        <o-integer-input #StockInicial attr="StockInicial" label="StockInicial" type="integer" editable="no" required="no" ></o-integer-input>
+      
+        <o-integer-input #Entradas attr="Entradas" label="Entradas" type="integer" editable="no" required="no" ></o-integer-input>
+      
+        <o-integer-input #Salidas attr="Salidas" label="Salidas" type="integer" editable="no" required="no" ></o-integer-input>
+      
+        <o-integer-input #Stock attr="Stock" label="Stock" type="integer" editable="no" required="no" ></o-integer-input>
+      
+        <o-date-input #FechaInventario attr="FechaInventario" type="timestamp" label="FechaInventario" editable="no" required="no" format="LL" fxFlex="20%" class="form-field"></o-date-input>
+      
+</div>
+</o-row>
+
+<div layout-padding></div>
+
+</o-form>

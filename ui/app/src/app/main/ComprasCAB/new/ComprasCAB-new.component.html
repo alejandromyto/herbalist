@@ -1,0 +1,94 @@
+<o-form #ComprasCABForm attr="ComprasCAB_form_insert" service="ComprasCAB" entity="ComprasCAB" 
+keys="idCabCompras" fxLayout="column" show-header="yes" header-actions="I"
+horizontal-scroll="yes"
+after-insert-mode="new" class="standalone-form-container" (onInsertMode)="onInsertMode()">
+
+<o-row attr="row1" layout-align="start stretch">
+  <div fxLayout="row wrap" fxLayoutAlign="start start" fxFlex fxLayoutGap="14px">
+    
+        <o-text-input #SerieNumero attr="SerieNumero" label=" Serie Numero*" enabled="yes" required="no" fxFlex="20%" class="form-field"></o-text-input>
+      
+        <o-list-picker 
+        attr="NoCuentaProveedor"
+        service="Proveedor" 
+        entity="ProveedorType"
+        fxFlex="30" 
+        query-on-init="no" 
+        query-on-bind="yes" 
+        required="no" 
+        enabled="yes" 
+        filter="yes"
+        value-column="NoCuenta" 
+        value-column-type="INTEGER"  
+        keys="NoCuenta" 
+        columns="NoCuenta;NoCuentaProveedor;DNICIF" 
+        title="NoCuentaProveedor"
+        visible-columns="NoCuenta;DNICIF" 
+        separator=" - " width="680px" class="form-field">
+</o-list-picker>
+      
+        <o-list-picker 
+        attr="idTienda"
+        service="Tienda" 
+        entity="TiendaType"
+        fxFlex="30" 
+        query-on-init="no" 
+        query-on-bind="yes" 
+        required="no" 
+        enabled="yes" 
+        filter="yes"
+        value-column="idTienda" 
+        value-column-type="SMALLINT"  
+        keys="idTienda" 
+        columns="idTienda;idTienda;idTienda" 
+        title="idTienda"
+        visible-columns="idTienda;idTienda" 
+        separator=" - " width="680px" class="form-field">
+</o-list-picker>
+      
+        <o-date-input #Fecha attr="Fecha" type="timestamp" label="Fecha" editable="no" required="no" format="LL" fxFlex="20%" class="form-field"></o-date-input>
+      
+        <o-text-input #RazonSocial attr="RazonSocial" label="RazonSocial" enabled="yes" required="no" fxFlex="20%" class="form-field"></o-text-input>
+      
+        <o-real-input #BaseImponible attr="BaseImponible" label="BaseImponible" min-decimal-digits="2" max-decimal-digits="4" min="0" max="1000000000" fxFlex="20%" class="form-field"></o-real-input>
+      
+        <o-real-input #ImporteIVA attr="ImporteIVA" label="ImporteIVA" min-decimal-digits="2" max-decimal-digits="4" min="0" max="1000000000" fxFlex="20%" class="form-field"></o-real-input>
+      
+        <o-real-input #ImporteRecargoEq attr="ImporteRecargoEq" label="ImporteRecargoEq" min-decimal-digits="2" max-decimal-digits="4" min="0" max="1000000000" fxFlex="20%" class="form-field"></o-real-input>
+      
+        <o-real-input #TotalAlbCompra attr="TotalAlbCompra" label="TotalAlbCompra" min-decimal-digits="2" max-decimal-digits="4" min="0" max="1000000000" fxFlex="20%" class="form-field"></o-real-input>
+      
+        <o-integer-input #idCabCompras attr="idCabCompras" label="idCabCompras" type="integer" editable="no" required="no" ></o-integer-input>
+      
+        <o-real-input #ImporteIVAReducido attr="ImporteIVAReducido" label="ImporteIVAReducido" min-decimal-digits="2" max-decimal-digits="4" min="0" max="1000000000" fxFlex="20%" class="form-field"></o-real-input>
+      
+        <o-real-input #ImporteIVASuperReducido attr="ImporteIVASuperReducido" label="ImporteIVASuperReducido" min-decimal-digits="2" max-decimal-digits="4" min="0" max="1000000000" fxFlex="20%" class="form-field"></o-real-input>
+      
+        <o-real-input #ImporteIVAAceitesPastas attr="ImporteIVAAceitesPastas" label="ImporteIVAAceitesPastas" min-decimal-digits="2" max-decimal-digits="4" min="0" max="1000000000" fxFlex="20%" class="form-field"></o-real-input>
+      
+        <o-real-input #BaseIVAReducido attr="BaseIVAReducido" label="BaseIVAReducido" min-decimal-digits="2" max-decimal-digits="4" min="0" max="1000000000" fxFlex="20%" class="form-field"></o-real-input>
+      
+        <o-real-input #BaseIVASuperReducido attr="BaseIVASuperReducido" label="BaseIVASuperReducido" min-decimal-digits="2" max-decimal-digits="4" min="0" max="1000000000" fxFlex="20%" class="form-field"></o-real-input>
+      
+        <o-real-input #BaseIVAAceitesPastas attr="BaseIVAAceitesPastas" label="BaseIVAAceitesPastas" min-decimal-digits="2" max-decimal-digits="4" min="0" max="1000000000" fxFlex="20%" class="form-field"></o-real-input>
+      
+        <o-real-input #BaseIVACero attr="BaseIVACero" label="BaseIVACero" min-decimal-digits="2" max-decimal-digits="4" min="0" max="1000000000" fxFlex="20%" class="form-field"></o-real-input>
+      
+        <o-real-input #ImporteIVAGeneral attr="ImporteIVAGeneral" label="ImporteIVAGeneral" min-decimal-digits="2" max-decimal-digits="4" min="0" max="1000000000" fxFlex="20%" class="form-field"></o-real-input>
+      
+        <o-real-input #BaseIVAGeneral attr="BaseIVAGeneral" label="BaseIVAGeneral" min-decimal-digits="2" max-decimal-digits="4" min="0" max="1000000000" fxFlex="20%" class="form-field"></o-real-input>
+      
+        <o-real-input #TotalAlbCalculado attr="TotalAlbCalculado" label="TotalAlbCalculado" min-decimal-digits="2" max-decimal-digits="4" min="0" max="1000000000" fxFlex="20%" class="form-field"></o-real-input>
+      
+        <o-real-input #tpcDtoProntoPago attr="tpcDtoProntoPago" label="tpcDtoProntoPago" min-decimal-digits="2" max-decimal-digits="4" min="0" max="1000000000" fxFlex="20%" class="form-field"></o-real-input>
+      
+        <o-real-input #tpcDtoGlobal attr="tpcDtoGlobal" label="tpcDtoGlobal" min-decimal-digits="2" max-decimal-digits="4" min="0" max="1000000000" fxFlex="20%" class="form-field"></o-real-input>
+      
+        <o-text-input #Tienda attr="Tienda" label="Tienda" enabled="yes" required="no" fxFlex="20%" class="form-field"></o-text-input>
+      
+</div>
+</o-row>
+
+<div layout-padding></div>
+
+</o-form>

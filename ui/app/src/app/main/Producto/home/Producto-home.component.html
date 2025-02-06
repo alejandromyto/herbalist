@@ -1,0 +1,71 @@
+<o-form-layout-manager attr="Producto" mode="tab" title="PRODUCTO">
+    <div fxFill fxLayout="column" fxLayoutAlign="start">
+        <o-table 
+            attr="ProductoTable" 
+            service="Producto" 
+            entity="Producto" 
+            title="PRODUCTO"
+            keys="Referencia"
+            columns="Referencia;Descripcion;DescripcionBreve;CodBarras;CodGenerico;FechaCreacion;PVP;PrecioCoste;Familia;SubFam;Stock;Ubicacion;IVA;Marca;Proveedor;Descatalogado;PublicarWeb;OfertaWeb;NovedadWeb;tipoIVA;FechaUltPVP" 
+            header-actions="R;D"
+            visible-columns="Referencia;Descripcion;DescripcionBreve;CodBarras;CodGenerico;FechaCreacion;PVP;PrecioCoste;Familia;SubFam;Stock;Ubicacion;IVA;Marca;Proveedor;Descatalogado;PublicarWeb;OfertaWeb;NovedadWeb;tipoIVA;FechaUltPVP"  
+            sort-columns="Referencia" 
+            query-rows="20" 
+            quick-filter="yes"
+            row-height="medium" 
+            select-all-checkbox="true" 
+            pageable="yes"  
+            auto-adjust="true" 
+            virtual-scroll="yes" 
+            edition-mode="dblclick"
+            horizontal-scroll="yes"
+            show-title="yes"
+            export-button="yes">
+            
+            <o-table-column #Referencia attr="Referencia" title=" Referencia*" type="integer" editable="no" required="no" content-align="center"></o-table-column>
+            
+            <o-table-column #Descripcion attr="Descripcion" title="Descripcion" editable="no" required="no" content-align="left"></o-table-column>
+            
+            <o-table-column #DescripcionBreve attr="DescripcionBreve" title="DescripcionBreve" editable="no" required="no" content-align="left"></o-table-column>
+            
+            <o-table-column #CodBarras attr="CodBarras" title="CodBarras" editable="no" required="no" content-align="left"></o-table-column>
+            
+            <o-table-column #CodGenerico attr="CodGenerico" title="CodGenerico" editable="no" required="no" content-align="left"></o-table-column>
+            
+            <o-table-column #FechaCreacion attr="FechaCreacion" title="FechaCreacion" editable="no" required="no" content-align="left"></o-table-column>
+            
+            <o-table-column #PVP attr="PVP" title="PVP" type="real" min-decimal-digits="2" max-decimal-digits="4" min="0" max="1000000.0000" content-align="center"></o-table-column>
+            
+            <o-table-column #PrecioCoste attr="PrecioCoste" title="PrecioCoste" type="real" min-decimal-digits="2" max-decimal-digits="4" min="0" max="1000000.0000" content-align="center"></o-table-column>
+            
+            <o-table-column #Familia attr="Familia" title="Familia" editable="no" required="no" content-align="left"></o-table-column>
+            
+            <o-table-column #SubFam attr="SubFam" title="SubFam" editable="no" required="no" content-align="left"></o-table-column>
+            
+            <o-table-column #Stock attr="Stock" title="Stock" type="real" min-decimal-digits="2" max-decimal-digits="4" min="0" max="1000000.0000" content-align="center"></o-table-column>
+            
+            <o-table-column #Ubicacion attr="Ubicacion" title="Ubicacion" editable="no" required="no" content-align="left"></o-table-column>
+            
+            <o-table-column #IVA attr="IVA" title="IVA" editable="no" required="no" content-align="left"></o-table-column>
+            
+            <o-table-column #Marca attr="Marca" title="Marca" editable="no" required="no" content-align="left"></o-table-column>
+            
+            <o-table-column #Proveedor attr="Proveedor" title="Proveedor" editable="no" required="no" content-align="left"></o-table-column>
+            
+            <o-table-column #Descatalogado attr="Descatalogado" title="Descatalogado" editable="no" required="no" content-align="left"></o-table-column>
+            
+            <o-table-column #PublicarWeb attr="PublicarWeb" title="PublicarWeb" editable="no" required="no" content-align="left"></o-table-column>
+            
+            <o-table-column #OfertaWeb attr="OfertaWeb" title="OfertaWeb" editable="no" required="no" content-align="left"></o-table-column>
+            
+            <o-table-column #NovedadWeb attr="NovedadWeb" title="NovedadWeb" editable="no" required="no" content-align="left"></o-table-column>
+            
+            <o-table-column #tipoIVA attr="tipoIVA" title="tipoIVA" type="integer" editable="no" required="no" content-align="center"></o-table-column>
+            
+            <o-table-column #FechaUltPVP attr="FechaUltPVP" title="FechaUltPVP" editable="no" required="no" content-align="left"></o-table-column>
+            
+            <o-table-context-menu></o-table-context-menu>
+            <o-table-paginator page-size-options="24;48;96"></o-table-paginator>
+        </o-table>
+    </div>
+</o-form-layout-manager>

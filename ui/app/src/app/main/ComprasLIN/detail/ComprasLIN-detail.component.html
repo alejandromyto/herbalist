@@ -1,0 +1,152 @@
+<div class="container">
+<o-form-container breadcrumb="yes" breadcrumb-label-columns="Tienda" breadcrumb-separator=", " class="fill-form">
+      <o-form #form attr="ComprasLIN_form_edit" 
+        service="ComprasLIN" 
+        entity="ComprasLIN" 
+        fxLayout="column" 
+        show-header="yes" 
+        header-actions="R;I;U;D"
+        #oDetailForm keys="id" 
+        keys-sql-types="INTEGER" 
+        show-header-navigation="yes"
+        (onDataLoaded)="onDataLoaded($event)">
+
+  <o-row attr="row1" layout-align="start stretch">
+    <div fxLayout="row wrap" fxLayoutAlign="start start" fxFlex fxLayoutGap="14px">
+      
+      <o-text-input #Tienda attr="Tienda" label=" Tienda*" enabled="yes" required="no" fxFlex="20%" class="form-field"></o-text-input>
+      
+      <o-list-picker 
+        attr="AlbaranCompra"
+        service="ComprasCAB" 
+        entity="ComprasCABType"
+        fxFlex="30" 
+        query-on-init="no" 
+        query-on-bind="yes" 
+        required="no" 
+        enabled="yes" 
+        filter="yes"
+        value-column="idCabCompras" 
+        value-column-type="INTEGER"  
+        keys="idCabCompras" 
+        columns="idCabCompras;AlbaranCompra;SerieNumero" 
+        title="AlbaranCompra"
+        visible-columns="idCabCompras;SerieNumero" 
+        separator=" - " width="680px" class="form-field">
+</o-list-picker>
+      
+      <o-list-picker 
+        attr="NoCuentaProveedor"
+        service="Proveedor" 
+        entity="ProveedorType"
+        fxFlex="30" 
+        query-on-init="no" 
+        query-on-bind="yes" 
+        required="no" 
+        enabled="yes" 
+        filter="yes"
+        value-column="NoCuenta" 
+        value-column-type="INTEGER"  
+        keys="NoCuenta" 
+        columns="NoCuenta;NoCuentaProveedor;DNICIF" 
+        title="NoCuentaProveedor"
+        visible-columns="NoCuenta;DNICIF" 
+        separator=" - " width="680px" class="form-field">
+</o-list-picker>
+      
+      <o-list-picker 
+        attr="ReferenciaProducto"
+        service="Producto" 
+        entity="ProductoType"
+        fxFlex="30" 
+        query-on-init="no" 
+        query-on-bind="yes" 
+        required="no" 
+        enabled="yes" 
+        filter="yes"
+        value-column="Referencia" 
+        value-column-type="INTEGER"  
+        keys="Referencia" 
+        columns="Referencia;ReferenciaProducto;Referencia" 
+        title="ReferenciaProducto"
+        visible-columns="Referencia;Referencia" 
+        separator=" - " width="680px" class="form-field">
+</o-list-picker>
+      
+      <o-list-picker 
+        attr="idTienda"
+        service="Tienda" 
+        entity="TiendaType"
+        fxFlex="30" 
+        query-on-init="no" 
+        query-on-bind="yes" 
+        required="no" 
+        enabled="yes" 
+        filter="yes"
+        value-column="idTienda" 
+        value-column-type="SMALLINT"  
+        keys="idTienda" 
+        columns="idTienda;idTienda;idTienda" 
+        title="idTienda"
+        visible-columns="idTienda;idTienda" 
+        separator=" - " width="680px" class="form-field">
+</o-list-picker>
+      
+      <o-integer-input #NumeroAlbaran attr="NumeroAlbaran" label="NumeroAlbaran" type="integer" editable="no" required="no" ></o-integer-input>
+      
+      <o-text-input #NombreProveedor attr="NombreProveedor" label="NombreProveedor" enabled="yes" required="no" fxFlex="20%" class="form-field"></o-text-input>
+      
+      <o-date-input #FechaAlbaran attr="FechaAlbaran" type="timestamp" label="FechaAlbaran" editable="no" required="no" format="LL" fxFlex="20%" class="form-field"></o-date-input>
+      
+      <o-real-input #ImporteAlbaran attr="ImporteAlbaran" label="ImporteAlbaran" min-decimal-digits="2" max-decimal-digits="4" min="0" max="1000000000" fxFlex="20%" class="form-field"></o-real-input>
+      
+      <o-text-input #OLDReferenciaProducto attr="OLDReferenciaProducto" label="OLDReferenciaProducto" enabled="yes" required="no" fxFlex="20%" class="form-field"></o-text-input>
+      
+      <o-text-input #DescripciondelProducto attr="DescripciondelProducto" label="DescripciondelProducto" enabled="yes" required="no" fxFlex="20%" class="form-field"></o-text-input>
+      
+      <o-integer-input #CodigodeBarras attr="CodigodeBarras" label="CodigodeBarras" type="integer" editable="no" required="no" ></o-integer-input>
+      
+      <o-real-input #PVPProducto attr="PVPProducto" label="PVPProducto" min-decimal-digits="2" max-decimal-digits="4" min="0" max="1000000000" fxFlex="20%" class="form-field"></o-real-input>
+      
+      <o-real-input #PrecioLinea attr="PrecioLinea" label="PrecioLinea" min-decimal-digits="2" max-decimal-digits="4" min="0" max="1000000000" fxFlex="20%" class="form-field"></o-real-input>
+      
+      <o-real-input #tpcIVA attr="tpcIVA" label="tpcIVA" min-decimal-digits="2" max-decimal-digits="4" min="0" max="1000000000" fxFlex="20%" class="form-field"></o-real-input>
+      
+      <o-real-input #tpcDescuento1 attr="tpcDescuento1" label="tpcDescuento1" min-decimal-digits="2" max-decimal-digits="4" min="0" max="1000000000" fxFlex="20%" class="form-field"></o-real-input>
+      
+      <o-real-input #tpcDescuento2 attr="tpcDescuento2" label="tpcDescuento2" min-decimal-digits="2" max-decimal-digits="4" min="0" max="1000000000" fxFlex="20%" class="form-field"></o-real-input>
+      
+      <o-real-input #tpcDescuento3 attr="tpcDescuento3" label="tpcDescuento3" min-decimal-digits="2" max-decimal-digits="4" min="0" max="1000000000" fxFlex="20%" class="form-field"></o-real-input>
+      
+      <o-real-input #tpcDescuento4 attr="tpcDescuento4" label="tpcDescuento4" min-decimal-digits="2" max-decimal-digits="4" min="0" max="1000000000" fxFlex="20%" class="form-field"></o-real-input>
+      
+      <o-real-input #tpcDtoGlobal attr="tpcDtoGlobal" label="tpcDtoGlobal" min-decimal-digits="2" max-decimal-digits="4" min="0" max="1000000000" fxFlex="20%" class="form-field"></o-real-input>
+      
+      <o-real-input #tpcDtoProntoPago attr="tpcDtoProntoPago" label="tpcDtoProntoPago" min-decimal-digits="2" max-decimal-digits="4" min="0" max="1000000000" fxFlex="20%" class="form-field"></o-real-input>
+      
+      <o-real-input #Importe attr="Importe" label="Importe" min-decimal-digits="2" max-decimal-digits="4" min="0" max="1000000000" fxFlex="20%" class="form-field"></o-real-input>
+      
+      <o-integer-input #CantidadConCoste attr="CantidadConCoste" label="CantidadConCoste" type="integer" editable="no" required="no" ></o-integer-input>
+      
+      <o-integer-input #CantidadGratis attr="CantidadGratis" label="CantidadGratis" type="integer" editable="no" required="no" ></o-integer-input>
+      
+      <o-real-input #PrecioCoste attr="PrecioCoste" label="PrecioCoste" min-decimal-digits="2" max-decimal-digits="4" min="0" max="1000000000" fxFlex="20%" class="form-field"></o-real-input>
+      
+      <o-text-input #Lote attr="Lote" label="Lote" enabled="yes" required="no" fxFlex="20%" class="form-field"></o-text-input>
+      
+      <o-date-input #FechaInventario attr="FechaInventario" type="timestamp" label="FechaInventario" editable="no" required="no" format="LL" fxFlex="20%" class="form-field"></o-date-input>
+      
+      <o-integer-input #Cantidad attr="Cantidad" label="Cantidad" type="integer" editable="no" required="no" ></o-integer-input>
+      
+      <o-integer-input #id attr="id" label="id" type="integer" editable="no" required="no" ></o-integer-input>
+      
+    </div>
+  </o-row>
+      
+      <mat-tab-group fxFill>
+        
+      </mat-tab-group>
+      
+    </o-form>
+  </o-form-container>
+</div>

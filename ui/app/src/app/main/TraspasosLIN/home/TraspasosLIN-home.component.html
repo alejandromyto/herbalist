@@ -1,0 +1,49 @@
+<o-form-layout-manager attr="TraspasosLIN" mode="tab" title="TRASPASOSLIN">
+    <div fxFill fxLayout="column" fxLayoutAlign="start">
+        <o-table 
+            attr="TraspasosLINTable" 
+            service="TraspasosLIN" 
+            entity="TraspasosLIN" 
+            title="TRASPASOSLIN"
+            keys="Numero"
+            columns="Origen;Referencia;idOrigen;Destino;Numero;Producto;FechaTraspaso;PedidoProveedor;idDestino;Cantidad" 
+            header-actions="R;D"
+            visible-columns="Origen;Referencia;idOrigen;Destino;Numero;Producto;FechaTraspaso;PedidoProveedor;idDestino;Cantidad"  
+            sort-columns="Origen" 
+            query-rows="20" 
+            quick-filter="yes"
+            row-height="medium" 
+            select-all-checkbox="true" 
+            pageable="yes"  
+            auto-adjust="true" 
+            virtual-scroll="yes" 
+            edition-mode="dblclick"
+            horizontal-scroll="yes"
+            show-title="yes"
+            export-button="yes">
+            
+            <o-table-column #Origen attr="Origen" title=" Origen*" editable="no" required="no" content-align="left"></o-table-column>
+            
+            <o-table-column #Referencia attr="Referencia" title="Referencia" type="integer" editable="no" required="no" content-align="center"></o-table-column>
+            
+            <o-table-column #idOrigen attr="idOrigen" title="idOrigen" type="integer" editable="no" required="no" content-align="center"></o-table-column>
+            
+            <o-table-column #Destino attr="Destino" title="Destino" editable="no" required="no" content-align="left"></o-table-column>
+            
+            <o-table-column #Numero attr="Numero" title="Numero" type="integer" editable="no" required="no" content-align="center"></o-table-column>
+            
+            <o-table-column #Producto attr="Producto" title="Producto" editable="no" required="no" content-align="left"></o-table-column>
+            
+            <o-table-column #FechaTraspaso attr="FechaTraspaso" title="FechaTraspaso" editable="no" required="no" content-align="left"></o-table-column>
+            
+            <o-table-column #PedidoProveedor attr="PedidoProveedor" title="PedidoProveedor" editable="no" required="no" content-align="left"></o-table-column>
+            
+            <o-table-column #idDestino attr="idDestino" title="idDestino" type="integer" editable="no" required="no" content-align="center"></o-table-column>
+            
+            <o-table-column #Cantidad attr="Cantidad" title="Cantidad" type="integer" editable="no" required="no" content-align="center"></o-table-column>
+            
+            <o-table-context-menu></o-table-context-menu>
+            <o-table-paginator page-size-options="24;48;96"></o-table-paginator>
+        </o-table>
+    </div>
+</o-form-layout-manager>

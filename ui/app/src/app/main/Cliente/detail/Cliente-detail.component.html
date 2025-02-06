@@ -1,0 +1,193 @@
+<div class="container">
+<o-form-container breadcrumb="yes" breadcrumb-label-columns="Tipo" breadcrumb-separator=", " class="fill-form">
+      <o-form #form attr="Cliente_form_edit" 
+        service="Cliente" 
+        entity="Cliente" 
+        fxLayout="column" 
+        show-header="yes" 
+        header-actions="R;I;U;D"
+        #oDetailForm keys="NCuenta" 
+        keys-sql-types="INTEGER" 
+        show-header-navigation="yes"
+        (onDataLoaded)="onDataLoaded($event)">
+
+  <o-row attr="row1" layout-align="start stretch">
+    <div fxLayout="row wrap" fxLayoutAlign="start start" fxFlex fxLayoutGap="14px">
+      
+      <o-text-input #Tipo attr="Tipo" label=" Tipo*" enabled="yes" required="no" fxFlex="20%" class="form-field"></o-text-input>
+      
+      <o-date-input #FechaAlta attr="FechaAlta" type="date" label="FechaAlta" enabled="yes" required="no" format="LL" fxFlex="20%" class="form-field"></o-date-input>
+      
+      <o-text-input #TipoCliente attr="TipoCliente" label="TipoCliente" enabled="yes" required="no" fxFlex="20%" class="form-field"></o-text-input>
+      
+      <o-text-input #DNI_CIF attr="DNI_CIF" label="DNI_CIF" enabled="yes" required="no" fxFlex="20%" class="form-field"></o-text-input>
+      
+      <o-text-input #BIC attr="BIC" label="BIC" enabled="yes" required="no" fxFlex="20%" class="form-field"></o-text-input>
+      
+      <o-text-input #IBAN attr="IBAN" label="IBAN" enabled="yes" required="no" fxFlex="20%" class="form-field"></o-text-input>
+      
+      <o-integer-input #NCuenta attr="NCuenta" label="NCuenta" type="integer" editable="no" required="no" ></o-integer-input>
+      
+      <o-text-input #NombreCorto attr="NombreCorto" label="NombreCorto" enabled="yes" required="no" fxFlex="20%" class="form-field"></o-text-input>
+      
+      <o-text-input #NombreCompleto attr="NombreCompleto" label="NombreCompleto" enabled="yes" required="no" fxFlex="20%" class="form-field"></o-text-input>
+      
+      <o-text-input #Calle attr="Calle" label="Calle" enabled="yes" required="no" fxFlex="20%" class="form-field"></o-text-input>
+      
+      <o-text-input #ExtCalle attr="ExtCalle" label="ExtCalle" enabled="yes" required="no" fxFlex="20%" class="form-field"></o-text-input>
+      
+      <o-text-input #Provincia attr="Provincia" label="Provincia" enabled="yes" required="no" fxFlex="20%" class="form-field"></o-text-input>
+      
+      <o-text-input #CodPostal attr="CodPostal" label="CodPostal" enabled="yes" required="no" fxFlex="20%" class="form-field"></o-text-input>
+      
+      <o-text-input #Tlf attr="Tlf" label="Tlf" enabled="yes" required="no" fxFlex="20%" class="form-field"></o-text-input>
+      
+      <o-text-input #Email attr="Email" label="Email" enabled="yes" required="no" fxFlex="20%" class="form-field"></o-text-input>
+      
+      <o-text-input #Web attr="Web" label="Web" enabled="yes" required="no" fxFlex="20%" class="form-field"></o-text-input>
+      
+      <o-text-input #FPago attr="FPago" label="FPago" enabled="yes" required="no" fxFlex="20%" class="form-field"></o-text-input>
+      
+      <o-text-input #CC attr="CC" label="CC" enabled="yes" required="no" fxFlex="20%" class="form-field"></o-text-input>
+      
+      <o-text-input #DtoGl attr="DtoGl" label="DtoGl" enabled="yes" required="no" fxFlex="20%" class="form-field"></o-text-input>
+      
+      <o-text-input #NCopFact attr="NCopFact" label="NCopFact" enabled="yes" required="no" fxFlex="20%" class="form-field"></o-text-input>
+      
+      <o-text-input #Contacto attr="Contacto" label="Contacto" enabled="yes" required="no" fxFlex="20%" class="form-field"></o-text-input>
+      
+      <o-text-input #Recomendado attr="Recomendado" label="Recomendado" enabled="yes" required="no" fxFlex="20%" class="form-field"></o-text-input>
+      
+      <o-text-input #Comentarios attr="Comentarios" label="Comentarios" enabled="yes" required="no" fxFlex="20%" class="form-field"></o-text-input>
+      
+      <o-text-input #Notific attr="Notific" label="Notific" enabled="yes" required="no" fxFlex="20%" class="form-field"></o-text-input>
+      
+      <o-text-input #DeBaja attr="DeBaja" label="DeBaja" enabled="yes" required="no" fxFlex="20%" class="form-field"></o-text-input>
+      
+      <o-date-input #FechaBaja attr="FechaBaja" type="date" label="FechaBaja" enabled="yes" required="no" format="LL" fxFlex="20%" class="form-field"></o-date-input>
+      
+      <o-text-input #CreadorPor attr="CreadorPor" label="CreadorPor" enabled="yes" required="no" fxFlex="20%" class="form-field"></o-text-input>
+      
+      <o-real-input #SumaVentas attr="SumaVentas" label="SumaVentas" min-decimal-digits="2" max-decimal-digits="4" min="0" max="1000000000" fxFlex="20%" class="form-field"></o-real-input>
+      
+      <o-integer-input #PuntosGenerados attr="PuntosGenerados" label="PuntosGenerados" type="integer" editable="no" required="no" ></o-integer-input>
+      
+      <o-integer-input #PuntosUsados attr="PuntosUsados" label="PuntosUsados" type="integer" editable="no" required="no" ></o-integer-input>
+      
+      <o-real-input #SaldoParaPuntos attr="SaldoParaPuntos" label="SaldoParaPuntos" min-decimal-digits="2" max-decimal-digits="4" min="0" max="1000000000" fxFlex="20%" class="form-field"></o-real-input>
+      
+      <o-text-input #Localidad attr="Localidad" label="Localidad" enabled="yes" required="no" fxFlex="20%" class="form-field"></o-text-input>
+      
+    </div>
+  </o-row>
+      
+      <mat-tab-group fxFill>
+        
+        <mat-tab label="VENTASLIN-NCuentaCliente">
+    <div layout-padding>
+      <o-table 
+        attr="VentasLINTable" 
+        service="VentasLIN" 
+        entity="VentasLIN" 
+        keys="id"
+        parent-keys="NCuentaCliente:NCuenta"
+        columns="id;NCuentaCliente;Numero;idTienda;RefProducto;Usuario;Tienda;Serie;VentaMostrador;FechaVenta;Producto;CodigoBarras;OLDRefProducto;FamiliaComercial;SubFamiliaComercial;Marca;CantidadVendida;LoteVendido;ImporteTotal;PrecioLinea;tpcIVA;NombreOferta;tpcDtoLinea;tpcDtoGlobal;tpcDtoPP;ImporteBruto;FacturaSN;FechaFactura;NombreRazonSocialCliente;NombreComercialCliente;TipoCliente;NIFCliente;Telefono;StockCantidad;FechaCaducidad"  
+        horizontal-scroll="yes"
+        detail-form-route="VentasLIN" 
+        edit-form-route="VentasLIN"
+        visible-columns="id;NCuentaCliente;Numero;idTienda;RefProducto;Usuario;Tienda;Serie;VentaMostrador;FechaVenta;Producto;CodigoBarras;OLDRefProducto;FamiliaComercial;SubFamiliaComercial;Marca;CantidadVendida;LoteVendido;ImporteTotal;PrecioLinea;tpcIVA;NombreOferta;tpcDtoLinea;tpcDtoGlobal;tpcDtoPP;ImporteBruto;FacturaSN;FechaFactura;NombreRazonSocialCliente;NombreComercialCliente;TipoCliente;NIFCliente;Telefono;StockCantidad;FechaCaducidad"  
+        sort-columns="id" 
+        query-rows="25" 
+        quick-filter="yes"
+        row-height="medium" 
+        select-all-checkbox="true" 
+        pageable="yes"  
+        auto-adjust="true" 
+        virtual-scroll="yes" 
+        insert-button="yes" 
+        delete-button="yes" 
+        fixed-header="true" 
+        class="vertical-padding-8"
+        edition-mode="dblclick" 
+        horizontal-scroll="yes" class="fill-form">
+        
+          <o-table-column #id attr="id" title=" id*" type="integer" editable="no" required="no" content-align="center"></o-table-column>
+        
+          <o-table-column #NCuentaCliente attr="NCuentaCliente" title="NCuentaCliente" type="integer" editable="no" required="no" content-align="center"></o-table-column>
+        
+          <o-table-column #Numero attr="Numero" title="Numero" type="integer" editable="no" required="no" content-align="center"></o-table-column>
+        
+          <o-table-column #idTienda attr="idTienda" title="idTienda" type="integer" editable="no" required="no" content-align="center"></o-table-column>
+        
+          <o-table-column #RefProducto attr="RefProducto" title="RefProducto" type="integer" editable="no" required="no" content-align="center"></o-table-column>
+        
+          <o-table-column #Usuario attr="Usuario" title="Usuario" editable="no" required="no" content-align="left"></o-table-column>
+        
+          <o-table-column #Tienda attr="Tienda" title="Tienda" editable="no" required="no" content-align="left"></o-table-column>
+        
+          <o-table-column #Serie attr="Serie" title="Serie" editable="no" required="no" content-align="left"></o-table-column>
+        
+          <o-table-column #VentaMostrador attr="VentaMostrador" title="VentaMostrador" editable="no" required="no" content-align="left"></o-table-column>
+        
+          <o-table-column #FechaVenta attr="FechaVenta" title="FechaVenta" editable="no" required="no" content-align="left"></o-table-column>
+        
+          <o-table-column #Producto attr="Producto" title="Producto" editable="no" required="no" content-align="left"></o-table-column>
+        
+          <o-table-column #CodigoBarras attr="CodigoBarras" title="CodigoBarras" editable="no" required="no" content-align="left"></o-table-column>
+        
+          <o-table-column #OLDRefProducto attr="OLDRefProducto" title="OLDRefProducto" editable="no" required="no" content-align="left"></o-table-column>
+        
+          <o-table-column #FamiliaComercial attr="FamiliaComercial" title="FamiliaComercial" editable="no" required="no" content-align="left"></o-table-column>
+        
+          <o-table-column #SubFamiliaComercial attr="SubFamiliaComercial" title="SubFamiliaComercial" editable="no" required="no" content-align="left"></o-table-column>
+        
+          <o-table-column #Marca attr="Marca" title="Marca" editable="no" required="no" content-align="left"></o-table-column>
+        
+          <o-table-column #CantidadVendida attr="CantidadVendida" title="CantidadVendida" type="real" min-decimal-digits="2" max-decimal-digits="4" min="0" max="1000000.0000" content-align="center"></o-table-column>
+        
+          <o-table-column #LoteVendido attr="LoteVendido" title="LoteVendido" editable="no" required="no" content-align="left"></o-table-column>
+        
+          <o-table-column #ImporteTotal attr="ImporteTotal" title="ImporteTotal" type="currency" editable="no" required="no" currency-symbol="$" currency-symbol-position="left" thousand-separator=","decimal-separator="."></o-table-column>
+        
+          <o-table-column #PrecioLinea attr="PrecioLinea" title="PrecioLinea" type="real" min-decimal-digits="2" max-decimal-digits="4" min="0" max="1000000.0000" content-align="center"></o-table-column>
+        
+          <o-table-column #tpcIVA attr="tpcIVA" title="tpcIVA" type="real" min-decimal-digits="2" max-decimal-digits="4" min="0" max="1000000.0000" content-align="center"></o-table-column>
+        
+          <o-table-column #NombreOferta attr="NombreOferta" title="NombreOferta" editable="no" required="no" content-align="left"></o-table-column>
+        
+          <o-table-column #tpcDtoLinea attr="tpcDtoLinea" title="tpcDtoLinea" type="real" min-decimal-digits="2" max-decimal-digits="4" min="0" max="1000000.0000" content-align="center"></o-table-column>
+        
+          <o-table-column #tpcDtoGlobal attr="tpcDtoGlobal" title="tpcDtoGlobal" type="real" min-decimal-digits="2" max-decimal-digits="4" min="0" max="1000000.0000" content-align="center"></o-table-column>
+        
+          <o-table-column #tpcDtoPP attr="tpcDtoPP" title="tpcDtoPP" type="real" min-decimal-digits="2" max-decimal-digits="4" min="0" max="1000000.0000" content-align="center"></o-table-column>
+        
+          <o-table-column #ImporteBruto attr="ImporteBruto" title="ImporteBruto" type="real" min-decimal-digits="2" max-decimal-digits="4" min="0" max="1000000.0000" content-align="center"></o-table-column>
+        
+          <o-table-column #FacturaSN attr="FacturaSN" title="FacturaSN" editable="no" required="no" content-align="left"></o-table-column>
+        
+          <o-table-column #FechaFactura attr="FechaFactura" title="FechaFactura" editable="no" required="no" content-align="left"></o-table-column>
+        
+          <o-table-column #NombreRazonSocialCliente attr="NombreRazonSocialCliente" title="NombreRazonSocialCliente" editable="no" required="no" content-align="left"></o-table-column>
+        
+          <o-table-column #NombreComercialCliente attr="NombreComercialCliente" title="NombreComercialCliente" editable="no" required="no" content-align="left"></o-table-column>
+        
+          <o-table-column #TipoCliente attr="TipoCliente" title="TipoCliente" editable="no" required="no" content-align="left"></o-table-column>
+        
+          <o-table-column #NIFCliente attr="NIFCliente" title="NIFCliente" editable="no" required="no" content-align="left"></o-table-column>
+        
+          <o-table-column #Telefono attr="Telefono" title="Telefono" editable="no" required="no" content-align="left"></o-table-column>
+        
+          <o-table-column #StockCantidad attr="StockCantidad" title="StockCantidad" type="real" min-decimal-digits="2" max-decimal-digits="4" min="0" max="1000000.0000" content-align="center"></o-table-column>
+        
+          <o-table-column #FechaCaducidad attr="FechaCaducidad" title="FechaCaducidad" editable="no" required="no" content-align="left"></o-table-column>
+        
+        <o-table-paginator page-size-options="25;50;100"></o-table-paginator>
+      </o-table>
+    </div>
+</mat-tab>
+        
+      </mat-tab-group>
+      
+    </o-form>
+  </o-form-container>
+</div>

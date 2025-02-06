@@ -1,0 +1,536 @@
+about:
+  date: February 06, 2025 05:04:20
+  recent_changes: works with modified safrs-react-admin
+  version: 0.0.0
+api_root: '{http_type}://{swagger_host}:{port}/{api}'
+authentication: '{system-default}'
+info:
+  number_relationships: 16
+  number_tables: 10
+info_toggle_checked: true
+resources:
+  Cliente:
+    attributes:
+    - label: ' Tipo*'
+      name: Tipo
+      search: true
+      sort: true
+    - name: FechaAlta
+      type: DATE
+    - name: TipoCliente
+    - name: DNI_CIF
+    - name: BIC
+    - name: IBAN
+    - name: NCuenta
+    - name: NombreCorto
+    - name: NombreCompleto
+    - name: Calle
+    - name: ExtCalle
+    - name: Provincia
+    - name: CodPostal
+    - name: Tlf
+    - name: Email
+    - name: Web
+    - name: FPago
+    - name: CC
+    - name: DtoGl
+    - name: NCopFact
+    - name: Contacto
+    - name: Recomendado
+    - name: Comentarios
+    - name: Notific
+    - name: DeBaja
+    - name: FechaBaja
+      type: DATE
+    - name: CreadorPor
+    - name: SumaVentas
+    - name: PuntosGenerados
+    - name: PuntosUsados
+    - name: SaldoParaPuntos
+    - name: Localidad
+    tab_groups:
+    - direction: tomany
+      fks:
+      - NCuentaCliente
+      name: VentasLINList
+      resource: VentasLIN
+    type: Cliente
+    user_key: Tipo
+  ComprasCAB:
+    attributes:
+    - label: ' Serie Numero*'
+      name: SerieNumero
+      search: true
+      sort: true
+    - name: NoCuentaProveedor
+    - name: idTienda
+    - name: Fecha
+      type: DATETIME
+    - name: RazonSocial
+    - name: BaseImponible
+    - name: ImporteIVA
+    - name: ImporteRecargoEq
+    - name: TotalAlbCompra
+    - name: idCabCompras
+    - name: ImporteIVAReducido
+    - name: ImporteIVASuperReducido
+    - name: ImporteIVAAceitesPastas
+    - name: BaseIVAReducido
+    - name: BaseIVASuperReducido
+    - name: BaseIVAAceitesPastas
+    - name: BaseIVACero
+    - name: ImporteIVAGeneral
+    - name: BaseIVAGeneral
+    - name: TotalAlbCalculado
+    - name: tpcDtoProntoPago
+    - name: tpcDtoGlobal
+    - name: Tienda
+    tab_groups:
+    - direction: tomany
+      fks:
+      - AlbaranCompra
+      name: ComprasLINList
+      resource: ComprasLIN
+    - direction: toone
+      fks:
+      - NoCuentaProveedor
+      name: Proveedor
+      resource: Proveedor
+    - direction: toone
+      fks:
+      - idTienda
+      name: Tienda1
+      resource: Tienda
+    type: ComprasCAB
+    user_key: SerieNumero
+  ComprasLIN:
+    attributes:
+    - label: ' Tienda*'
+      name: Tienda
+      search: true
+      sort: true
+    - name: AlbaranCompra
+    - name: NoCuentaProveedor
+    - name: ReferenciaProducto
+    - name: idTienda
+    - name: idTienda
+    - name: NumeroAlbaran
+    - name: NombreProveedor
+    - name: FechaAlbaran
+      type: DATETIME
+    - name: ImporteAlbaran
+    - name: OLDReferenciaProducto
+    - name: DescripciondelProducto
+    - name: CodigodeBarras
+    - name: PVPProducto
+    - name: PrecioLinea
+    - name: tpcIVA
+    - name: tpcDescuento1
+    - name: tpcDescuento2
+    - name: tpcDescuento3
+    - name: tpcDescuento4
+    - name: tpcDtoGlobal
+    - name: tpcDtoProntoPago
+    - name: Importe
+    - name: CantidadConCoste
+    - name: CantidadGratis
+    - name: PrecioCoste
+    - name: Lote
+    - name: FechaInventario
+      type: DATETIME
+    - name: Cantidad
+    - name: id
+    tab_groups:
+    - direction: toone
+      fks:
+      - AlbaranCompra
+      name: Compras_CAB
+      resource: ComprasCAB
+    - direction: toone
+      fks:
+      - NoCuentaProveedor
+      name: Proveedor
+      resource: Proveedor
+    - direction: toone
+      fks:
+      - ReferenciaProducto
+      name: Producto
+      resource: Producto
+    - direction: toone
+      fks:
+      - idTienda
+      - ReferenciaProducto
+      name: StockTienda
+      resource: StockTienda
+    - direction: toone
+      fks:
+      - idTienda
+      name: Tienda1
+      resource: Tienda
+    type: ComprasLIN
+    user_key: Tienda
+  Producto:
+    attributes:
+    - label: ' Referencia*'
+      name: Referencia
+      search: true
+      sort: true
+    - name: Descripcion
+    - name: DescripcionBreve
+    - name: CodBarras
+    - name: CodGenerico
+    - name: FechaCreacion
+    - name: PVP
+    - name: PrecioCoste
+    - name: Familia
+    - name: SubFam
+    - name: Stock
+    - name: Ubicacion
+    - name: IVA
+    - name: Marca
+    - name: Proveedor
+    - name: Descatalogado
+    - name: PublicarWeb
+    - name: OfertaWeb
+    - name: NovedadWeb
+    - name: tipoIVA
+    - name: FechaUltPVP
+      type: DATETIME
+    tab_groups:
+    - direction: tomany
+      fks:
+      - ReferenciaProducto
+      name: ComprasLINList
+      resource: ComprasLIN
+    - direction: tomany
+      fks:
+      - Referencia
+      name: StockTiendaList
+      resource: StockTienda
+    - direction: tomany
+      fks:
+      - Referencia
+      name: TraspasosLINList
+      resource: TraspasosLIN
+    - direction: tomany
+      fks:
+      - RefProducto
+      name: VentasLINList
+      resource: VentasLIN
+    type: Producto
+    user_key: Referencia
+  Proveedor:
+    attributes:
+    - label: ' D N I C I F*'
+      name: DNICIF
+      search: true
+      sort: true
+    - name: RSocial
+    - name: TipoProv
+    - name: FPago
+    - name: Facturacion
+    - name: Provincia
+    - name: NoCuenta
+    - name: Calle
+    - name: ExtCalle
+    - name: CPost
+    - name: E_mail
+    - name: Web
+    - name: BIC
+    - name: IBAN
+    - name: CC
+    - name: Tlf1
+    - name: Tlf2
+    - name: Movil
+    - name: Fax
+    - name: Contacto
+    - name: Comentarios
+    - name: Notific
+    - name: Debaja
+    - name: Localidad
+    tab_groups:
+    - direction: tomany
+      fks:
+      - NoCuentaProveedor
+      name: ComprasCABList
+      resource: ComprasCAB
+    - direction: tomany
+      fks:
+      - NoCuentaProveedor
+      name: ComprasLINList
+      resource: ComprasLIN
+    type: Proveedor
+    user_key: DNICIF
+  StockTienda:
+    attributes:
+    - label: ' I D*'
+      name: ID
+      required: true
+      search: true
+      sort: true
+    - name: Referencia
+    - name: idTienda
+    - name: Tienda
+      required: true
+    - name: Marca
+    - name: Producto
+    - name: UltimaVenta
+      type: DATE
+    - name: UltimaCompra
+      type: DATE
+    - name: Unidades
+    - name: PrecioCoste
+    - name: PrecioCosteConIVA
+    - name: PrecioCosteConIVA_Recargo
+    - name: PCM
+    - name: PCMconIVA
+    - name: PCMconIVA_Recargo
+    - name: PVP
+    - name: PVPsinIVA
+    - name: StockInicial
+    - name: Entradas
+    - name: Salidas
+    - name: Stock
+    - name: FechaInventario
+      type: DATETIME
+    tab_groups:
+    - direction: tomany
+      fks:
+      - idTienda
+      - ReferenciaProducto
+      name: ComprasLINList
+      resource: ComprasLIN
+    - direction: tomany
+      fks:
+      - Referencia
+      - idDestino
+      name: TraspasosLINList
+      resource: TraspasosLIN
+    - direction: tomany
+      fks:
+      - idOrigen
+      - Referencia
+      name: TraspasosLINList1
+      resource: TraspasosLIN
+    - direction: tomany
+      fks:
+      - idTienda
+      - RefProducto
+      name: VentasLINList
+      resource: VentasLIN
+    - direction: toone
+      fks:
+      - Referencia
+      name: Producto1
+      resource: Producto
+    - direction: toone
+      fks:
+      - idTienda
+      name: Tienda1
+      resource: Tienda
+    type: StockTienda
+    user_key: ID
+  Tienda:
+    attributes:
+    - label: ' id Tienda*'
+      name: idTienda
+      search: true
+      sort: true
+    - name: nombreTienda
+    tab_groups:
+    - direction: tomany
+      fks:
+      - idTienda
+      name: ComprasCABList
+      resource: ComprasCAB
+    - direction: tomany
+      fks:
+      - idTienda
+      name: ComprasLINList
+      resource: ComprasLIN
+    - direction: tomany
+      fks:
+      - idTienda
+      name: StockTiendaList
+      resource: StockTienda
+    type: Tienda
+    user_key: idTienda
+  TraspasosLIN:
+    attributes:
+    - label: ' Origen*'
+      name: Origen
+      search: true
+      sort: true
+    - name: Referencia
+    - name: idOrigen
+    - name: Referencia
+    - name: Destino
+    - name: Numero
+    - name: Producto
+    - name: FechaTraspaso
+      type: DATETIME
+    - name: PedidoProveedor
+    - name: idDestino
+    - name: Cantidad
+    tab_groups:
+    - direction: toone
+      fks:
+      - Referencia
+      - idDestino
+      name: StockTienda
+      resource: StockTienda
+    - direction: toone
+      fks:
+      - idOrigen
+      - Referencia
+      name: StockTienda1
+      resource: StockTienda
+    - direction: toone
+      fks:
+      - Referencia
+      name: Producto1
+      resource: Producto
+    type: TraspasosLIN
+    user_key: Origen
+  VentasCAB:
+    attributes:
+    - label: ' Usuario*'
+      name: Usuario
+      search: true
+      sort: true
+    - name: Tienda
+    - name: Serie
+    - name: Numero
+    - name: VentaMostrador
+    - name: FechaVenta
+      type: DATETIME
+    - name: ImporteTotal
+    - name: PrecioLinea
+    - name: NombreOferta
+    - name: tpcDtoGlobal
+    - name: tpcDtoPP
+    - name: ImporteBruto
+    - name: FacturaSN
+    - name: FechaFactura
+    - name: NombreRazonSocialCliente
+    - name: NombreComercialCliente
+    - name: NCuentaCliente
+    - name: TipoCliente
+    - name: NIFCliente
+    - name: Telefono
+    - name: ImporteIVASuperReducido
+    - name: ImporteIVAReducido
+    - name: ImporteIVAAceitesPastas
+    - name: ImporteIVAGeneral
+    - name: BaseIVACero
+    - name: BaseIVASuperReducido
+    - name: BaseIVAReducido
+    - name: BaseIVAAceitesPastas
+    - name: BaseIVAGeneral
+    - name: NumeroLineas
+    - name: TieneValesDto
+    - name: Puntos
+    tab_groups:
+    - direction: tomany
+      fks:
+      - Numero
+      name: VentasLINList
+      resource: VentasLIN
+    type: VentasCAB
+    user_key: Usuario
+  VentasLIN:
+    attributes:
+    - label: ' id*'
+      name: id
+      search: true
+      sort: true
+    - name: NCuentaCliente
+    - name: Numero
+    - name: idTienda
+    - name: RefProducto
+    - name: Usuario
+    - name: Tienda
+    - name: Serie
+    - name: VentaMostrador
+    - name: FechaVenta
+      type: DATETIME
+    - name: Producto
+    - name: CodigoBarras
+    - name: OLDRefProducto
+    - name: FamiliaComercial
+    - name: SubFamiliaComercial
+    - name: Marca
+    - name: CantidadVendida
+    - name: LoteVendido
+    - name: ImporteTotal
+    - name: PrecioLinea
+    - name: tpcIVA
+    - name: NombreOferta
+    - name: tpcDtoLinea
+    - name: tpcDtoGlobal
+    - name: tpcDtoPP
+    - name: ImporteBruto
+    - name: FacturaSN
+    - name: FechaFactura
+    - name: NombreRazonSocialCliente
+    - name: NombreComercialCliente
+    - name: TipoCliente
+    - name: NIFCliente
+    - name: Telefono
+    - name: StockCantidad
+    - name: FechaCaducidad
+    tab_groups:
+    - direction: toone
+      fks:
+      - NCuentaCliente
+      name: Cliente
+      resource: Cliente
+    - direction: toone
+      fks:
+      - Numero
+      name: Ventas_CAB
+      resource: VentasCAB
+    - direction: toone
+      fks:
+      - idTienda
+      - RefProducto
+      name: StockTienda
+      resource: StockTienda
+    - direction: toone
+      fks:
+      - RefProducto
+      name: Producto1
+      resource: Producto
+    type: VentasLIN
+    user_key: id
+settings:
+  HomeJS: /admin-app/home.js
+  max_list_columns: 8
+  style_guide:
+    applicationLocales:
+    - en
+    - es
+    currency_symbol: $
+    currency_symbol_position: left
+    date_format: LL
+    decimal_max: '1000000000'
+    decimal_min: '0'
+    decimal_separator: .
+    detail_mode: tab
+    edit_on_mode: dblclick
+    exclude_listpicker: false
+    include_translation: 'false'
+    keycloak_client_id: alsclient
+    keycloak_realm: kcals
+    keycloak_url: http://localhost:8080
+    locale: en
+    max_decimal_digits: '4'
+    min_decimal_digits: '2'
+    new_mode: dialog
+    pick_style: list
+    row_height: small,
+    serviceType: OntimizeEE
+    startSessionPath: /auth/login
+    style: light
+    thousand_separator: ','
+    use_keycloak: 'false'

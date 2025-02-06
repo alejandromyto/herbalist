@@ -1,0 +1,62 @@
+<o-form #ProveedorForm attr="Proveedor_form_insert" service="Proveedor" entity="Proveedor" 
+keys="NoCuenta" fxLayout="column" show-header="yes" header-actions="I"
+horizontal-scroll="yes"
+after-insert-mode="new" class="standalone-form-container" (onInsertMode)="onInsertMode()">
+
+<o-row attr="row1" layout-align="start stretch">
+  <div fxLayout="row wrap" fxLayoutAlign="start start" fxFlex fxLayoutGap="14px">
+    
+        <o-text-input #DNICIF attr="DNICIF" label=" D N I C I F*" enabled="yes" required="no" fxFlex="20%" class="form-field"></o-text-input>
+      
+        <o-text-input #RSocial attr="RSocial" label="RSocial" enabled="yes" required="no" fxFlex="20%" class="form-field"></o-text-input>
+      
+        <o-text-input #TipoProv attr="TipoProv" label="TipoProv" enabled="yes" required="no" fxFlex="20%" class="form-field"></o-text-input>
+      
+        <o-text-input #FPago attr="FPago" label="FPago" enabled="yes" required="no" fxFlex="20%" class="form-field"></o-text-input>
+      
+        <o-text-input #Facturacion attr="Facturacion" label="Facturacion" enabled="yes" required="no" fxFlex="20%" class="form-field"></o-text-input>
+      
+        <o-text-input #Provincia attr="Provincia" label="Provincia" enabled="yes" required="no" fxFlex="20%" class="form-field"></o-text-input>
+      
+        <o-integer-input #NoCuenta attr="NoCuenta" label="NoCuenta" type="integer" editable="no" required="no" ></o-integer-input>
+      
+        <o-text-input #Calle attr="Calle" label="Calle" enabled="yes" required="no" fxFlex="20%" class="form-field"></o-text-input>
+      
+        <o-text-input #ExtCalle attr="ExtCalle" label="ExtCalle" enabled="yes" required="no" fxFlex="20%" class="form-field"></o-text-input>
+      
+        <o-integer-input #CPost attr="CPost" label="CPost" type="integer" editable="no" required="no" ></o-integer-input>
+      
+        <o-text-input #E_mail attr="E_mail" label="E_mail" enabled="yes" required="no" fxFlex="20%" class="form-field"></o-text-input>
+      
+        <o-text-input #Web attr="Web" label="Web" enabled="yes" required="no" fxFlex="20%" class="form-field"></o-text-input>
+      
+        <o-text-input #BIC attr="BIC" label="BIC" enabled="yes" required="no" fxFlex="20%" class="form-field"></o-text-input>
+      
+        <o-text-input #IBAN attr="IBAN" label="IBAN" enabled="yes" required="no" fxFlex="20%" class="form-field"></o-text-input>
+      
+        <o-text-input #CC attr="CC" label="CC" enabled="yes" required="no" fxFlex="20%" class="form-field"></o-text-input>
+      
+        <o-text-input #Tlf1 attr="Tlf1" label="Tlf1" enabled="yes" required="no" fxFlex="20%" class="form-field"></o-text-input>
+      
+        <o-text-input #Tlf2 attr="Tlf2" label="Tlf2" enabled="yes" required="no" fxFlex="20%" class="form-field"></o-text-input>
+      
+        <o-integer-input #Movil attr="Movil" label="Movil" type="integer" editable="no" required="no" ></o-integer-input>
+      
+        <o-text-input #Fax attr="Fax" label="Fax" enabled="yes" required="no" fxFlex="20%" class="form-field"></o-text-input>
+      
+        <o-text-input #Contacto attr="Contacto" label="Contacto" enabled="yes" required="no" fxFlex="20%" class="form-field"></o-text-input>
+      
+        <o-text-input #Comentarios attr="Comentarios" label="Comentarios" enabled="yes" required="no" fxFlex="20%" class="form-field"></o-text-input>
+      
+        <o-text-input #Notific attr="Notific" label="Notific" enabled="yes" required="no" fxFlex="20%" class="form-field"></o-text-input>
+      
+        <o-text-input #Debaja attr="Debaja" label="Debaja" enabled="yes" required="no" fxFlex="20%" class="form-field"></o-text-input>
+      
+        <o-text-input #Localidad attr="Localidad" label="Localidad" enabled="yes" required="no" fxFlex="20%" class="form-field"></o-text-input>
+      
+</div>
+</o-row>
+
+<div layout-padding></div>
+
+</o-form>

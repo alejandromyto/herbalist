@@ -1,0 +1,56 @@
+<o-form #ProductoForm attr="Producto_form_insert" service="Producto" entity="Producto" 
+keys="Referencia" fxLayout="column" show-header="yes" header-actions="I"
+horizontal-scroll="yes"
+after-insert-mode="new" class="standalone-form-container" (onInsertMode)="onInsertMode()">
+
+<o-row attr="row1" layout-align="start stretch">
+  <div fxLayout="row wrap" fxLayoutAlign="start start" fxFlex fxLayoutGap="14px">
+    
+        <o-integer-input #Referencia attr="Referencia" label=" Referencia*" type="integer" editable="no" required="no" ></o-integer-input>
+      
+        <o-text-input #Descripcion attr="Descripcion" label="Descripcion" enabled="yes" required="no" fxFlex="20%" class="form-field"></o-text-input>
+      
+        <o-text-input #DescripcionBreve attr="DescripcionBreve" label="DescripcionBreve" enabled="yes" required="no" fxFlex="20%" class="form-field"></o-text-input>
+      
+        <o-text-input #CodBarras attr="CodBarras" label="CodBarras" enabled="yes" required="no" fxFlex="20%" class="form-field"></o-text-input>
+      
+        <o-text-input #CodGenerico attr="CodGenerico" label="CodGenerico" enabled="yes" required="no" fxFlex="20%" class="form-field"></o-text-input>
+      
+        <o-text-input #FechaCreacion attr="FechaCreacion" label="FechaCreacion" enabled="yes" required="no" fxFlex="20%" class="form-field"></o-text-input>
+      
+        <o-text-input #PVP attr="PVP" label="PVP" enabled="yes" required="no" fxFlex="20%" class="form-field"></o-text-input>
+      
+        <o-text-input #PrecioCoste attr="PrecioCoste" label="PrecioCoste" enabled="yes" required="no" fxFlex="20%" class="form-field"></o-text-input>
+      
+        <o-text-input #Familia attr="Familia" label="Familia" enabled="yes" required="no" fxFlex="20%" class="form-field"></o-text-input>
+      
+        <o-text-input #SubFam attr="SubFam" label="SubFam" enabled="yes" required="no" fxFlex="20%" class="form-field"></o-text-input>
+      
+        <o-text-input #Stock attr="Stock" label="Stock" enabled="yes" required="no" fxFlex="20%" class="form-field"></o-text-input>
+      
+        <o-text-input #Ubicacion attr="Ubicacion" label="Ubicacion" enabled="yes" required="no" fxFlex="20%" class="form-field"></o-text-input>
+      
+        <o-text-input #IVA attr="IVA" label="IVA" enabled="yes" required="no" fxFlex="20%" class="form-field"></o-text-input>
+      
+        <o-text-input #Marca attr="Marca" label="Marca" enabled="yes" required="no" fxFlex="20%" class="form-field"></o-text-input>
+      
+        <o-text-input #Proveedor attr="Proveedor" label="Proveedor" enabled="yes" required="no" fxFlex="20%" class="form-field"></o-text-input>
+      
+        <o-text-input #Descatalogado attr="Descatalogado" label="Descatalogado" enabled="yes" required="no" fxFlex="20%" class="form-field"></o-text-input>
+      
+        <o-text-input #PublicarWeb attr="PublicarWeb" label="PublicarWeb" enabled="yes" required="no" fxFlex="20%" class="form-field"></o-text-input>
+      
+        <o-text-input #OfertaWeb attr="OfertaWeb" label="OfertaWeb" enabled="yes" required="no" fxFlex="20%" class="form-field"></o-text-input>
+      
+        <o-text-input #NovedadWeb attr="NovedadWeb" label="NovedadWeb" enabled="yes" required="no" fxFlex="20%" class="form-field"></o-text-input>
+      
+        <o-integer-input #tipoIVA attr="tipoIVA" label="tipoIVA" type="integer" editable="no" required="no" ></o-integer-input>
+      
+        <o-date-input #FechaUltPVP attr="FechaUltPVP" type="timestamp" label="FechaUltPVP" editable="no" required="no" format="LL" fxFlex="20%" class="form-field"></o-date-input>
+      
+</div>
+</o-row>
+
+<div layout-padding></div>
+
+</o-form>

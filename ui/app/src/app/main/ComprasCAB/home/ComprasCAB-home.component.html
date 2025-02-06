@@ -1,0 +1,75 @@
+<o-form-layout-manager attr="ComprasCAB" mode="tab" title="COMPRASCAB">
+    <div fxFill fxLayout="column" fxLayoutAlign="start">
+        <o-table 
+            attr="ComprasCABTable" 
+            service="ComprasCAB" 
+            entity="ComprasCAB" 
+            title="COMPRASCAB"
+            keys="idCabCompras"
+            columns="SerieNumero;NoCuentaProveedor;idTienda;Fecha;RazonSocial;BaseImponible;ImporteIVA;ImporteRecargoEq;TotalAlbCompra;idCabCompras;ImporteIVAReducido;ImporteIVASuperReducido;ImporteIVAAceitesPastas;BaseIVAReducido;BaseIVASuperReducido;BaseIVAAceitesPastas;BaseIVACero;ImporteIVAGeneral;BaseIVAGeneral;TotalAlbCalculado;tpcDtoProntoPago;tpcDtoGlobal;Tienda" 
+            header-actions="R;D"
+            visible-columns="SerieNumero;NoCuentaProveedor;idTienda;Fecha;RazonSocial;BaseImponible;ImporteIVA;ImporteRecargoEq;TotalAlbCompra;idCabCompras;ImporteIVAReducido;ImporteIVASuperReducido;ImporteIVAAceitesPastas;BaseIVAReducido;BaseIVASuperReducido;BaseIVAAceitesPastas;BaseIVACero;ImporteIVAGeneral;BaseIVAGeneral;TotalAlbCalculado;tpcDtoProntoPago;tpcDtoGlobal;Tienda"  
+            sort-columns="SerieNumero" 
+            query-rows="20" 
+            quick-filter="yes"
+            row-height="medium" 
+            select-all-checkbox="true" 
+            pageable="yes"  
+            auto-adjust="true" 
+            virtual-scroll="yes" 
+            edition-mode="dblclick"
+            horizontal-scroll="yes"
+            show-title="yes"
+            export-button="yes">
+            
+            <o-table-column #SerieNumero attr="SerieNumero" title=" Serie Numero*" editable="no" required="no" content-align="left"></o-table-column>
+            
+            <o-table-column #NoCuentaProveedor attr="NoCuentaProveedor" title="NoCuentaProveedor" type="integer" editable="no" required="no" content-align="center"></o-table-column>
+            
+            <o-table-column #idTienda attr="idTienda" title="idTienda" type="integer" editable="no" required="no" content-align="center"></o-table-column>
+            
+            <o-table-column #Fecha attr="Fecha" title="Fecha" editable="no" required="no" content-align="left"></o-table-column>
+            
+            <o-table-column #RazonSocial attr="RazonSocial" title="RazonSocial" editable="no" required="no" content-align="left"></o-table-column>
+            
+            <o-table-column #BaseImponible attr="BaseImponible" title="BaseImponible" type="real" min-decimal-digits="2" max-decimal-digits="4" min="0" max="1000000.0000" content-align="center"></o-table-column>
+            
+            <o-table-column #ImporteIVA attr="ImporteIVA" title="ImporteIVA" type="real" min-decimal-digits="2" max-decimal-digits="4" min="0" max="1000000.0000" content-align="center"></o-table-column>
+            
+            <o-table-column #ImporteRecargoEq attr="ImporteRecargoEq" title="ImporteRecargoEq" type="real" min-decimal-digits="2" max-decimal-digits="4" min="0" max="1000000.0000" content-align="center"></o-table-column>
+            
+            <o-table-column #TotalAlbCompra attr="TotalAlbCompra" title="TotalAlbCompra" type="real" min-decimal-digits="2" max-decimal-digits="4" min="0" max="1000000.0000" content-align="center"></o-table-column>
+            
+            <o-table-column #idCabCompras attr="idCabCompras" title="idCabCompras" type="integer" editable="no" required="no" content-align="center"></o-table-column>
+            
+            <o-table-column #ImporteIVAReducido attr="ImporteIVAReducido" title="ImporteIVAReducido" type="real" min-decimal-digits="2" max-decimal-digits="4" min="0" max="1000000.0000" content-align="center"></o-table-column>
+            
+            <o-table-column #ImporteIVASuperReducido attr="ImporteIVASuperReducido" title="ImporteIVASuperReducido" type="real" min-decimal-digits="2" max-decimal-digits="4" min="0" max="1000000.0000" content-align="center"></o-table-column>
+            
+            <o-table-column #ImporteIVAAceitesPastas attr="ImporteIVAAceitesPastas" title="ImporteIVAAceitesPastas" type="real" min-decimal-digits="2" max-decimal-digits="4" min="0" max="1000000.0000" content-align="center"></o-table-column>
+            
+            <o-table-column #BaseIVAReducido attr="BaseIVAReducido" title="BaseIVAReducido" type="real" min-decimal-digits="2" max-decimal-digits="4" min="0" max="1000000.0000" content-align="center"></o-table-column>
+            
+            <o-table-column #BaseIVASuperReducido attr="BaseIVASuperReducido" title="BaseIVASuperReducido" type="real" min-decimal-digits="2" max-decimal-digits="4" min="0" max="1000000.0000" content-align="center"></o-table-column>
+            
+            <o-table-column #BaseIVAAceitesPastas attr="BaseIVAAceitesPastas" title="BaseIVAAceitesPastas" type="real" min-decimal-digits="2" max-decimal-digits="4" min="0" max="1000000.0000" content-align="center"></o-table-column>
+            
+            <o-table-column #BaseIVACero attr="BaseIVACero" title="BaseIVACero" type="real" min-decimal-digits="2" max-decimal-digits="4" min="0" max="1000000.0000" content-align="center"></o-table-column>
+            
+            <o-table-column #ImporteIVAGeneral attr="ImporteIVAGeneral" title="ImporteIVAGeneral" type="real" min-decimal-digits="2" max-decimal-digits="4" min="0" max="1000000.0000" content-align="center"></o-table-column>
+            
+            <o-table-column #BaseIVAGeneral attr="BaseIVAGeneral" title="BaseIVAGeneral" type="real" min-decimal-digits="2" max-decimal-digits="4" min="0" max="1000000.0000" content-align="center"></o-table-column>
+            
+            <o-table-column #TotalAlbCalculado attr="TotalAlbCalculado" title="TotalAlbCalculado" type="real" min-decimal-digits="2" max-decimal-digits="4" min="0" max="1000000.0000" content-align="center"></o-table-column>
+            
+            <o-table-column #tpcDtoProntoPago attr="tpcDtoProntoPago" title="tpcDtoProntoPago" type="real" min-decimal-digits="2" max-decimal-digits="4" min="0" max="1000000.0000" content-align="center"></o-table-column>
+            
+            <o-table-column #tpcDtoGlobal attr="tpcDtoGlobal" title="tpcDtoGlobal" type="real" min-decimal-digits="2" max-decimal-digits="4" min="0" max="1000000.0000" content-align="center"></o-table-column>
+            
+            <o-table-column #Tienda attr="Tienda" title="Tienda" editable="no" required="no" content-align="left"></o-table-column>
+            
+            <o-table-context-menu></o-table-context-menu>
+            <o-table-paginator page-size-options="24;48;96"></o-table-paginator>
+        </o-table>
+    </div>
+</o-form-layout-manager>

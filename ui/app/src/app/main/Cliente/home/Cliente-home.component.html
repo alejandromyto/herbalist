@@ -1,0 +1,93 @@
+<o-form-layout-manager attr="Cliente" mode="tab" title="CLIENTE">
+    <div fxFill fxLayout="column" fxLayoutAlign="start">
+        <o-table 
+            attr="ClienteTable" 
+            service="Cliente" 
+            entity="Cliente" 
+            title="CLIENTE"
+            keys="NCuenta"
+            columns="Tipo;FechaAlta;TipoCliente;DNI_CIF;BIC;IBAN;NCuenta;NombreCorto;NombreCompleto;Calle;ExtCalle;Provincia;CodPostal;Tlf;Email;Web;FPago;CC;DtoGl;NCopFact;Contacto;Recomendado;Comentarios;Notific;DeBaja;FechaBaja;CreadorPor;SumaVentas;PuntosGenerados;PuntosUsados;SaldoParaPuntos;Localidad" 
+            header-actions="R;D"
+            visible-columns="Tipo;FechaAlta;TipoCliente;DNI_CIF;BIC;IBAN;NCuenta;NombreCorto;NombreCompleto;Calle;ExtCalle;Provincia;CodPostal;Tlf;Email;Web;FPago;CC;DtoGl;NCopFact;Contacto;Recomendado;Comentarios;Notific;DeBaja;FechaBaja;CreadorPor;SumaVentas;PuntosGenerados;PuntosUsados;SaldoParaPuntos;Localidad"  
+            sort-columns="Tipo" 
+            query-rows="20" 
+            quick-filter="yes"
+            row-height="medium" 
+            select-all-checkbox="true" 
+            pageable="yes"  
+            auto-adjust="true" 
+            virtual-scroll="yes" 
+            edition-mode="dblclick"
+            horizontal-scroll="yes"
+            show-title="yes"
+            export-button="yes">
+            
+            <o-table-column #Tipo attr="Tipo" title=" Tipo*" editable="no" required="no" content-align="left"></o-table-column>
+            
+            <o-date-input #FechaAlta attr="FechaAlta" type="date" label="FechaAlta" enabled="yes" required="no" format="LL" fxFlex="20%" class="form-field"></o-date-input>
+            
+            <o-table-column #TipoCliente attr="TipoCliente" title="TipoCliente" editable="no" required="no" content-align="left"></o-table-column>
+            
+            <o-table-column #DNI_CIF attr="DNI_CIF" title="DNI_CIF" editable="no" required="no" content-align="left"></o-table-column>
+            
+            <o-table-column #BIC attr="BIC" title="BIC" editable="no" required="no" content-align="left"></o-table-column>
+            
+            <o-table-column #IBAN attr="IBAN" title="IBAN" editable="no" required="no" content-align="left"></o-table-column>
+            
+            <o-table-column #NCuenta attr="NCuenta" title="NCuenta" type="integer" editable="no" required="no" content-align="center"></o-table-column>
+            
+            <o-table-column #NombreCorto attr="NombreCorto" title="NombreCorto" editable="no" required="no" content-align="left"></o-table-column>
+            
+            <o-table-column #NombreCompleto attr="NombreCompleto" title="NombreCompleto" editable="no" required="no" content-align="left"></o-table-column>
+            
+            <o-table-column #Calle attr="Calle" title="Calle" editable="no" required="no" content-align="left"></o-table-column>
+            
+            <o-table-column #ExtCalle attr="ExtCalle" title="ExtCalle" editable="no" required="no" content-align="left"></o-table-column>
+            
+            <o-table-column #Provincia attr="Provincia" title="Provincia" editable="no" required="no" content-align="left"></o-table-column>
+            
+            <o-table-column #CodPostal attr="CodPostal" title="CodPostal" editable="no" required="no" content-align="left"></o-table-column>
+            
+            <o-table-column #Tlf attr="Tlf" title="Tlf" editable="no" required="no" content-align="left"></o-table-column>
+            
+            <o-table-column #Email attr="Email" title="Email" editable="no" required="no" content-align="left"></o-table-column>
+            
+            <o-table-column #Web attr="Web" title="Web" editable="no" required="no" content-align="left"></o-table-column>
+            
+            <o-table-column #FPago attr="FPago" title="FPago" editable="no" required="no" content-align="left"></o-table-column>
+            
+            <o-table-column #CC attr="CC" title="CC" editable="no" required="no" content-align="left"></o-table-column>
+            
+            <o-table-column #DtoGl attr="DtoGl" title="DtoGl" editable="no" required="no" content-align="left"></o-table-column>
+            
+            <o-table-column #NCopFact attr="NCopFact" title="NCopFact" editable="no" required="no" content-align="left"></o-table-column>
+            
+            <o-table-column #Contacto attr="Contacto" title="Contacto" editable="no" required="no" content-align="left"></o-table-column>
+            
+            <o-table-column #Recomendado attr="Recomendado" title="Recomendado" editable="no" required="no" content-align="left"></o-table-column>
+            
+            <o-table-column #Comentarios attr="Comentarios" title="Comentarios" editable="no" required="no" content-align="left"></o-table-column>
+            
+            <o-table-column #Notific attr="Notific" title="Notific" editable="no" required="no" content-align="left"></o-table-column>
+            
+            <o-table-column #DeBaja attr="DeBaja" title="DeBaja" editable="no" required="no" content-align="left"></o-table-column>
+            
+            <o-date-input #FechaBaja attr="FechaBaja" type="date" label="FechaBaja" enabled="yes" required="no" format="LL" fxFlex="20%" class="form-field"></o-date-input>
+            
+            <o-table-column #CreadorPor attr="CreadorPor" title="CreadorPor" editable="no" required="no" content-align="left"></o-table-column>
+            
+            <o-table-column #SumaVentas attr="SumaVentas" title="SumaVentas" type="real" min-decimal-digits="2" max-decimal-digits="4" min="0" max="1000000.0000" content-align="center"></o-table-column>
+            
+            <o-table-column #PuntosGenerados attr="PuntosGenerados" title="PuntosGenerados" type="integer" editable="no" required="no" content-align="center"></o-table-column>
+            
+            <o-table-column #PuntosUsados attr="PuntosUsados" title="PuntosUsados" type="integer" editable="no" required="no" content-align="center"></o-table-column>
+            
+            <o-table-column #SaldoParaPuntos attr="SaldoParaPuntos" title="SaldoParaPuntos" type="real" min-decimal-digits="2" max-decimal-digits="4" min="0" max="1000000.0000" content-align="center"></o-table-column>
+            
+            <o-table-column #Localidad attr="Localidad" title="Localidad" editable="no" required="no" content-align="left"></o-table-column>
+            
+            <o-table-context-menu></o-table-context-menu>
+            <o-table-paginator page-size-options="24;48;96"></o-table-paginator>
+        </o-table>
+    </div>
+</o-form-layout-manager>
