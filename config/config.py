@@ -124,7 +124,7 @@ class Config:
     KEYCLOAK_CLIENT_ID = 'alsclient'
     ''' keycloak client id '''
 
-    SECURITY_ENABLED = False  # disables security (regardless of SECURITY_PROVIDER)
+    SECURITY_ENABLED = True
     SECURITY_PROVIDER = None
     if os.getenv('SECURITY_ENABLED'):  # e.g. export SECURITY_ENABLED=true
         security_export = os.getenv('SECURITY_ENABLED')  # type: ignore # type: str
@@ -144,7 +144,7 @@ class Config:
 
     # Begin Multi-Database URLs (from ApiLogicServer add-db...)
     auth_db_path = str(project_path.joinpath('database/authentication_db.sqlite'))
-    SQLALCHEMY_DATABASE_URI_AUTHENTICATION = f'sqlite:///{auth_db_path}'
+    SQLALCHEMY_DATABASE_URI_AUTHENTICATION = 'mysql+pymysql://root:root@mariadb:3306/authdb'
     app_logger.info(f'config.py - SQLALCHEMY_DATABASE_URI_AUTHENTICATION: {SQLALCHEMY_DATABASE_URI_AUTHENTICATION}\n')
 
     # as desired, use env variable: export SQLALCHEMY_DATABASE_URI='sqlite:////Users/val/dev/servers/docker_api_logic_project/database/db.sqliteXX'
