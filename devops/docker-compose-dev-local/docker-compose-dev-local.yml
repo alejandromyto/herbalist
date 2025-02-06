@@ -9,37 +9,48 @@
 # sh ./devops/docker-compose-dev-local/docker-compose.sh
 # --> builds, runs at localhost:5656
 
-version: "3.5"
+
 
 services:
 
     # TODO - alter this for your database
     # Postgres example: https://github.com/ApiLogicServer/postgres-nw/blob/main/devops/docker-compose-dev-local/docker-compose-dev-local.yml
-    mysql-service:
-        image: apilogicserver/mysql8.0:latest
-        restart: always
-        environment:
-            - MYSQL_USER=root
-            - MYSQL_PASSWORD=p
-            - MYSQL_ROOT_PASSWORD=p
-        ports:
-            # <Port exposed> : <MySQL Port running inside container>
-            - '3306:3306'
-        expose:
-            # Opens port 3306 on the container
-            - '3306'
+    # mysql-service:
+    #     image: apilogicserver/mysql8.0:latest
+    #     restart: always
+    #     environment:
+    #         - MYSQL_USER=root
+    #         - MYSQL_PASSWORD=p
+    #         - MYSQL_ROOT_PASSWORD=p
+    #     ports:
+    #         # <Port exposed> : <MySQL Port running inside container>
+    #         - '3306:3306'
+    #     expose:
+    #         # Opens port 3306 on the container
+    #         - '3306'
 
     api-logic-server:
-        image: apilogicserver/herbalist
+        image: local/herbalist
         environment:
           - APILOGICPROJECT_VERBOSE=true
           - SECURITY_ENABLED=true
+          - APILOGICPROJECT_CLIENT_URI=http://herbodesonia.soon.it:5656
+          #- PYTHONPATH=/app/ApiLogicProject
+          - APILOGICSERVER_RUNNING=DOCKER
+          - APILOGICPROJECT_SWAGGER_HOST=herbodesonia.soon.it
+          - APILOGICPROJECT_SWAGGER_PORT=5656
           ## TODO: verify Database uri's here, 
           # - APILOGICPROJECT_SQLALCHEMY_DATABASE_URI=postgresql://postgres:p@postgresql-service/herbalistdb
           # - APILOGICPROJECT_SQLALCHEMY_DATABASE_URI_AUTHENTICATION=postgresql://postgres:p@postgresql-service/authdb
-          - APILOGICPROJECT_SQLALCHEMY_DATABASE_URI=mysql+pymysql://root:p@mysql-service:3306/herbalistdb
-          - APILOGICPROJECT_SQLALCHEMY_DATABASE_URI_AUTHENTICATION=mysql+pymysql://root:p@mysql-service:3306/authdb
+          - APILOGICPROJECT_SQLALCHEMY_DATABASE_URI=mysql+pymysql://root:root@mariadb:3306/herbalistdb
+          - APILOGICPROJECT_SQLALCHEMY_DATABASE_URI_AUTHENTICATION=mysql+pymysql://root:root@mariadb:3306/authdb
         expose:
           - 5656
         ports:
           - 5656:5656
+        networks:
+          - dev-network
+
+networks:
+    dev-network:
+        external: true
