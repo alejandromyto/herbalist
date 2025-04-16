@@ -17,3 +17,16 @@ Called from models.py (classes describing schema, per introspection).
 
 Your Code Goes Here
 """
+
+models.Cliente.VentasCABList = relationship(
+    "VentasCAB",
+    back_populates="Cliente",
+    primaryjoin="Cliente.NCuenta == foreign(VentasCAB.NCuentaCliente)"
+)
+
+models.VentasCAB.Cliente = relationship(
+    "Cliente",
+    back_populates="VentasCABList",
+    primaryjoin="foreign(VentasCAB.NCuentaCliente) == Cliente.NCuenta"
+)
+

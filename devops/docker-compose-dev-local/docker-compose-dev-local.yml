@@ -28,29 +28,60 @@ services:
     #     expose:
     #         # Opens port 3306 on the container
     #         - '3306'
+  mariadb:
+    image: mariadb:11.4
+    container_name: mariadb
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+    expose: 
+      - 3306
+    ports:
+      - "3306:3306"
+    volumes:
+      - /var/lib/mysql2:/var/lib/mysql
+      - /run/mysql2d:/run/mysqld
+    networks:
+      - dev-network
 
-    api-logic-server:
-        image: local/herbalist
-        environment:
-          - APILOGICPROJECT_VERBOSE=true
-          - SECURITY_ENABLED=true
-          - APILOGICPROJECT_CLIENT_URI=http://herbodesonia.soon.it:5656
-          #- PYTHONPATH=/app/ApiLogicProject
-          - APILOGICSERVER_RUNNING=DOCKER
-          - APILOGICPROJECT_SWAGGER_HOST=herbodesonia.soon.it
-          - APILOGICPROJECT_SWAGGER_PORT=5656
-          ## TODO: verify Database uri's here, 
-          # - APILOGICPROJECT_SQLALCHEMY_DATABASE_URI=postgresql://postgres:p@postgresql-service/herbalistdb
-          # - APILOGICPROJECT_SQLALCHEMY_DATABASE_URI_AUTHENTICATION=postgresql://postgres:p@postgresql-service/authdb
-          - APILOGICPROJECT_SQLALCHEMY_DATABASE_URI=mysql+pymysql://root:root@mariadb:3306/herbalistdb
-          - APILOGICPROJECT_SQLALCHEMY_DATABASE_URI_AUTHENTICATION=mysql+pymysql://root:root@mariadb:3306/authdb
-        expose:
-          - 5656
-        ports:
-          - 5656:5656
-        networks:
-          - dev-network
 
+  api-logic-server:
+      image: local/herbalist
+      environment:
+        - APILOGICPROJECT_VERBOSE=true
+        - SECURITY_ENABLED=true
+        - APILOGICPROJECT_CLIENT_URI=http://herbodesonia.soon.it:5656
+        #- PYTHONPATH=/app/ApiLogicProject
+        - APILOGICSERVER_RUNNING=DOCKER
+        - APILOGICPROJECT_SWAGGER_HOST=herbodesonia.soon.it
+        - APILOGICPROJECT_SWAGGER_PORT=5656
+        ## TODO: verify Database uri's here, 
+        # - APILOGICPROJECT_SQLALCHEMY_DATABASE_URI=postgresql://postgres:p@postgresql-service/herbalistdb
+        # - APILOGICPROJECT_SQLALCHEMY_DATABASE_URI_AUTHENTICATION=postgresql://postgres:p@postgresql-service/authdb
+        - APILOGICPROJECT_SQLALCHEMY_DATABASE_URI=mysql+pymysql://root:root@mariadb:3306/herbalistdb
+        - APILOGICPROJECT_SQLALCHEMY_DATABASE_URI_AUTHENTICATION=mysql+pymysql://root:root@mariadb:3306/authdb
+      expose:
+        - 5656
+      ports:
+        - 5656:5656
+      networks:
+        - dev-network
+
+  ontimize_app:
+    image: local/herbalist_ontimize_app:latest
+    container_name: ontimize_app
+    expose:
+      - 8088
+    ports:
+      - 8088:8088
+    #volumes:
+      # local:path-in-container
+      #- ../../ui/app/dist:/home/node
+    depends_on:
+      - api-logic-server
+    environment:
+      - NODE_ENV=production
+    networks:
+        - dev-network
 networks:
     dev-network:
         external: true

@@ -6,6 +6,9 @@
 #
 # docker tag tylerm007/yaml_editor tylerm007/yaml_editor:latest
 # docker push tylerm007/yaml_editor:latest  
+
+# docker build -f Dockerfile -t local/herbalist_ontimize_app --rm .
+# docker tag local/herbalist_ontimize_app local/herbalist_ontimize_app:1.0.0
 FROM node:18.10.0-alpine as build
 
 # Set the working directory
@@ -30,5 +33,5 @@ FROM nginx:latest
 COPY --from=build /usr/local/app/dist /usr/share/nginx/html
 COPY nginx/nginx.conf /etc/nginx/conf.d/default.conf
 
-# Expose port 80
-EXPOSE 80
+# Expose port 8088
+EXPOSE 8088

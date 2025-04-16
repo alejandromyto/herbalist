@@ -1,5 +1,5 @@
 export const environment = {
-  apiEndpoint: "http://localhost/ontimizeweb/services/rest",
+  apiEndpoint: "http://herbodesonia.soon.it:5656/ontimizeweb/services/rest",
   production: true,
   versions: {
     core: '15.2.10',

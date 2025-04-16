@@ -10,7 +10,7 @@
 #    $ sh devops/docker-image/build_image.sh .
 
 projectname="herbalist"  # lower case, only
-repositoryname="apilogicserver"
+repositoryname="local"
 version="1.0.0"
 
 debug() {
@@ -44,7 +44,7 @@ fi
 
 echo "Building ${repositoryname}/${projectname}\n"
 
-docker build -f devops/docker-image/build_image.dockerfile -t ${repositoryname}/${projectname} --rm .
+docker build -f devops/docker-image/build_image.dockerfile -t ${repositoryname}/${projectname}:${version} --rm .
 
 status=$?
 if [ $status -eq 0 ]; then
